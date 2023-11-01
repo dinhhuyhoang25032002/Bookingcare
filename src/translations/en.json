@@ -1,0 +1,136 @@
+{
+    "homeheader": {
+        "speciality": "Medical speciality",
+        "searchdoctor": "Search for a doctor by specialty",
+        "health-facility": "Healthcare facility",
+        "select-room": "Select a healthcare facility or clinic",
+        "doctor": "Doctor",
+        "select-doctor": "Choose a competent doctor",
+        "fee": "Checkup package",
+        "checkhealth": "General health examination",
+        "support": "Support",
+        "welcome": "Welcome"
+    },
+    "banner": {
+        "title1": "Healthcare Platform",
+        "title2": "Comprehensive Health Care",
+        "Specialized-medical-examination": "Specialized medical examination",
+        "Telehealth-consultation": "Telehealth consultation",
+        "General-health-check-up": "General health check-up",
+        "Medical-diagnostics": "Medical diagnostics",
+        "Mental-health": "Mental health",
+        "House-call": "House call",
+        "search": "Search for all health-related issues"
+    },
+    "menu": {
+        "system": {
+            "header": "System",
+            "system-administrator": {
+                "header": "System Administrator",
+                "user-manage": "User manage",
+                "user-redux": "Manage user using redux",
+                "register-package-group-or-account": "Register service package for group/account"
+            },
+            "system-parameter": {
+                "header": "System-parameter"
+            }
+        },
+        "admin": {
+            "manage-user": "Manage User",
+            "manage-doctor": "Manage Doctor",
+            "manage-admin": "Manage Admin",
+            "crud": "CRUD User",
+            "crud-redux": "CRUD Redux",
+            "manage-clinic": "Manage-Clinic",
+            "clinic": "Clinic",
+            "specialty": "Specialty",
+            "manage-specialty": "Manage Specialty",
+            "handbook": "Handbook",
+            "manage-handbook": "Manage Handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's Schedule",
+            "schedule": "Schedule"
+        }
+    },
+    "manage-user": {
+        "add": "Add new user",
+        "email": "Email",
+        "password": "Password",
+        "firstname": "First Name",
+        "lastname": "Last Name",
+        "phonenumber": "Phone Number",
+        "address": "Address",
+        "gender": "Gender",
+        "male": "Male",
+        "felmale": "Felmale",
+        "other": "Other",
+        "role": "Role",
+        "image": "Image",
+        "position": "Position",
+        "submit": "Submit",
+        "title": "Manage User BookingCare ",
+        "edit": "Save User"
+    },
+    "homepage": {
+        "Prominent-Doctor-In-Week": "Prominent Doctor In Week",
+        "Search-more": "Search More"
+    },
+    "manage-schedule": {
+        "title": "Managing the doctor's medical examination schedule",
+        "choose-doctor": "Choose A Doctor",
+        "choose-date": "Choose A Medical Appointment Date",
+        "save-button": "Save"
+    },
+    "patient": {
+        "infor-doctor": {
+            "schedule": "Medical appointment",
+            "text-schedule-doctor": "No available appointments on the selected day. Please choose another day!",
+            "text-booking": " and Book (Booking fee 0đ).",
+            "text-select": "Select"
+        },
+        "extra-doctor-infor": {
+            "address-clinic": "Medical facility address",
+            "consultation-fee": "Consultation Fee",
+            "note-detail": "The examination fee does not include the cost of imaging and laboratory tests",
+            "show-fee-detailt": "Read more",
+            "hide-fee-detailt": "Hide price list"
+        },
+        "modal-booking": {
+            "title-booking": "Medical appointment booking information",
+            "booking-offline": "Clinic visit",
+            "booking-online": "Telehealth appointment",
+            "male": "Male",
+            "female": "Female",
+            "insurance": "Do you use private insurance?",
+            "payment-method": "Payment method",
+            "later": "Payment on-site at the healthcare facility: ",
+            "btn-submit": "Appointment confirmation",
+            "sociation": "Support for other social policies",
+            "booking-free": "Free appointment scheduling."
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "text-content": "Detailed information about the doctor.",
+            "select-doctor": "Select a doctor",
+            "infor-introduction-doctor": "Doctor's Introduction",
+            "create-button": "Create",
+            "save-button": "Save",
+            "price": "Consultation Fee",
+            "payment": "Methods of payment",
+            "provice": "Select province",
+            "nameClinic": "Clinic Name",
+            "addressClinic": "nameClinic Address",
+            "note": "Explanation"
+        }
+    },
+    "30": "Doctor Nguyen Trong Tuan, Specialist I with nearly 20 years of experience in examining, diagnosing, and treating mental health disorders, is currently working at the Mental Hospital in Ho Chi Minh City. He has undergone practical training in the FFI program specializing in Mental Health at Tenon Hospital in the Republic of France. Doctor Tuan accepts patients for consultation and treatment from the age of 10 and above.",
+    "152/6 Thành Thái, phường 12, quận 10, TP.HCM": " 152/6 Thanh Thai, phuong 12, quan 10, TP.HCM",
+    "29": "Head of the Joint Department, Hanoi Medical University Former physician at the Orthopedics Department, Bach Mai HospitalCurrently serving as the Vice President of the Hanoi Rheumatology Association.",
+    "Số 73 ngõ 109 Hoàng Ngân - Thanh Xuân - Hà Nội": " So 73 ngo 109 Hoang Ngan - Thanh Xuan - Ha Noi",
+    "27": "Master, Doctor Doan Thi Lan. Doctor specializing in nutrition consultation for pregnant women and children. Many years of experience in the field of nutrition consultation.",
+    "Số 52 Nguyễn Chí Thanh - Đống Đa - Hà Nội": " So 52 Nguyen Chi Thanh - Đong Đa - Ha Noi",
+    "28": "Deputy Director, Head of the Reproductive Support Department Nam Hoc and Infertility Hospital, Hanoi With over 10 years of experience, Dr. Le Thi Thu Hien is a specialist in Reproductive Support and In vitro Fertilization (IVF). She welcomes patients of all ages for consultation",
+    "431 Tam Trinh (Lô 01 - 8A), Hoàng Mai, Hà Nội": " 431 Tam Trinh (L0 01 - 8A), Hoang Mai, Ha Noi"
+}

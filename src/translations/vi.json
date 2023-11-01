@@ -1,0 +1,129 @@
+{
+    "homeheader": {
+        "speciality": "Chuyên khoa",
+        "searchdoctor": "Tìm bác sĩ theo chuyên khoa",
+        "health-facility": "Cơ sở ý tế",
+        "select-room": "Chọn bệnh viện phòng khám",
+        "doctor": "Bác sĩ",
+        "select-doctor": "Chọn bác sĩ giỏi",
+        "fee": "Gói khám",
+        "checkhealth": "Khám sức khỏe tổng quát",
+        "support": "Hỗ trợ",
+        "welcome": "Xin chào"
+    },
+    "banner": {
+        "title1": "NỀN TẢNG Y TẾ",
+        "title2": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+        "Specialized-medical-examination": "Khám chuyên khoa",
+        "Telehealth-consultation": "Khám từ xa",
+        "General-health-check-up": "Khám tổng quát",
+        "Medical-diagnostics": "Xét nghiệm y học",
+        "Mental-health": "Sức khỏe tinh thần",
+        "House-call": "Khám tại nhà",
+        "search": "Tìm kiếm mọi vấn đề về sức khỏe"
+    },
+    "menu": {
+        "system": {
+            "header": "Hệ thống",
+            "system-administrator": {
+                "header": "Quản trị hệ thống",
+                "user-manage": "Quản lý người sử dụng",
+                "user-redux": "Quản lý người dùng redux",
+                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
+            },
+            "system-parameter": {
+                "header": "Tham số hệ thống"
+            }
+        },
+        "admin": {
+            "manage-user": "Người dùng",
+            "manage-doctor": "Quản lí bác sĩ",
+            "manage-admin": "Quản lí admin",
+            "crud": "CRUD người dùng",
+            "crud-redux": "CRUD Redux",
+            "manage-clinic": "Quản lí phòng khám",
+            "clinic": "Phòng khám",
+            "specialty": "Chuyên khoa",
+            "manage-specialty": "Quản lí chuyên khoa",
+            "handbook": "Cẩm nang",
+            "manage-handbook": "Quản lí cẩm nang"
+        },
+        "doctor": {
+            "manage-schedule": "Quản lí kế hoạch khám bệnh",
+            "schedule": "Kế hoạch"
+        }
+    },
+    "manage-user": {
+        "add": "Thêm mới người dùng",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "firstname": "Họ",
+        "lastname": "Tên",
+        "phonenumber": "Số điện thoại",
+        "address": "Địa chỉ",
+        "gender": "Giới tính",
+        "male": "Nam",
+        "felmale": "Nữ",
+        "other": "Khác",
+        "role": "Vai trò",
+        "image": "Ảnh đại diện",
+        "position": "Chức vụ",
+        "submit": "Gửi",
+        "title": "Quản lý đặt lịch và chăm sóc người dùng",
+        "edit": "Lưu lại"
+    },
+    "homepage": {
+        "Prominent-Doctor-In-Week": "Bác sĩ nổi bật tuần qua",
+        "Search-more": "Tìm kiếm"
+    },
+    "manage-schedule": {
+        "title": "Quản lí lịch khám bệnh của bác sĩ",
+        "choose-doctor": "Chọn bác sĩ",
+        "choose-date": "Chọn ngày khám bệnh",
+        "save-button": "Lưu"
+    },
+    "patient": {
+        "infor-doctor": {
+            "schedule": "Lịch Khám",
+            "text-schedule-doctor": "Không có lịch khám bệnh trong ngày được chọn. Vui lòng chọn ngày khác!",
+            "text-booking": "và Đặt (Phí đặt lịch 0đ).",
+            "text-select": "Chọn"
+        },
+        "extra-doctor-infor": {
+            "address-clinic": "Địa chỉ phòng khám",
+            "consultation-fee": "Giá khám",
+            "note-detail": "Giá khám chưa bao gồm chi phí chụp chiếu, xét nghiệm",
+            "show-fee-detailt": "Xem thêm",
+            "hide-fee-detailt": "Ẩn bảng giá"
+        },
+        "modal-booking": {
+            "title-booking": "Thông tin đặt lịch khám bệnh",
+            "male": "Nam",
+            "female": "Nữ",
+            "booking-offline": "Khám bệnh trực tiếp",
+            "booking-online": "Khám bệnh từ xa",
+            "insurance": "Bạn có sử dụng bảo hiểm (tư nhân)?",
+            "payment-method": "Hình thức thanh toán",
+            "later": "Thanh toán sau tại cơ sở y tế: ",
+            "btn-submit": "Xác nhận đặt lịch khám bệnh",
+            "sociation": "Được hỗ trợ các chính sách xã hội khác",
+            "booking-free":"Miễn phí đặt lịch khám"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "text-content": "Thông tin về bác sĩ.",
+            "select-doctor": "Chọn bác sĩ",
+            "infor-introduction-doctor": "Thông tin giới thiệu bác sĩ",
+            "save-button": "Lưu",
+            "create-button": "Tạo",
+            "price": "Giá khám bệnh",
+            "payment": "Phương thức thanh toán",
+            "provice": "Chọn tỉnh thành",
+            "nameClinic": "Tên phòng khám",
+            "addressClinic": "Địa chỉ phòng khám",
+            "note": "Chú thích",
+            "note-detailt": ""
+        }
+    }
+}

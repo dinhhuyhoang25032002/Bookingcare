@@ -1,0 +1,112 @@
+.confirm-booking {
+    background-image  : url(../../assets/images/82918d18-b63c-40db-ac18-40250deaea55.webp) !important;
+    height            : 595px;
+    width             : 100vw;
+    //padding         : 25px;
+    margin            : 8px 15px;
+    background        : center no-repeat;
+    background-size   : cover;
+    flex-wrap         : wrap;
+    margin            : 0 auto;
+
+
+
+}
+
+.modal-content {
+    border-radius: 3px;
+    padding      : 15px;
+
+    .confirm-booking-content {
+        .note-doctor {
+            display            : flex;
+            justify-content    : center;
+            //  align-items    : center;
+            margin-bottom      : 15px;
+
+            input {
+                padding-left         : 30px;
+                padding-bottom       : 57px;
+                // text-transform: capitalize;
+                height               : 80px;
+                //  margin           : 0px auto;
+            }
+
+            .fa-plus-circle {
+                margin-right: -24px;
+                z-index     : 2;
+                margin-top  : 8px;
+            }
+        }
+
+        .title {
+            font-size     : 20px;
+            text-align    : center;
+            margin-top    : 8px;
+            margin-bottom : 15px;
+            text-transform: uppercase;
+            color         : #25b6ff;
+
+        }
+
+        .number-phone {
+            label {
+                color: #25b6ff;
+            }
+        }
+
+
+
+        .confirm-title {
+            font-size    : 18px;
+            font-weight  : 600;
+            text-align   : center;
+            margin-bottom: 15px;
+
+        }
+
+        .note-client {
+            margin-bottom: 4px;
+
+            &.note {
+                margin-top: 30px;
+                
+            }
+        }
+
+        .thank-for {
+            font-size  : 17px;
+            margin     : 15px;
+            text-align : center;
+            font-weight: 600;
+            color      : #5fac47;
+        }
+
+
+    }
+
+    .bookingcare-header {
+        //padding        : 10px 0px;
+        padding-bottom    : 0px;
+        // padding-top    : 20px;
+        display           : flex;
+        justify-content   : space-between;
+        align-items       : center;
+
+        i {
+            cursor       : pointer;
+            font-size    : 16px;
+            // margin-top: 2px;
+        }
+
+        .logo-image {
+            width              : 120px;
+            height             : 40px;
+            background-image   : url(../../assets/logo.svg);
+            background-position: left center;
+            background-repeat  : no-repeat;
+
+            background-size: contain;
+        }
+    }
+}

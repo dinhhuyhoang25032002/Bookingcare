@@ -1,0 +1,105 @@
+.schedule-doctor-container {
+    //  border: 1px solid green;
+    height: 100%;
+
+    .all-schedule {
+        select {
+            color             : #0071ba;
+            border            : none;
+            border-bottom     : 1px solid #999999;
+            outline           : none;
+            font-size         : 14px;
+            padding-top       : 10px;
+            padding-bottom    : 5px;
+            text-align        : center;
+            align-items       : center;
+            padding-right     : -5px;
+            width             : 149px;
+            // text-decoration: underline;
+            font-weight       : 600;
+            margin-bottom     : 10px;
+
+
+        }
+
+
+    }
+
+    .all-value-schedule {
+        .text-calendar {
+            i {
+                //   margin: 0px 32px;
+
+                span {
+                    margin-left   : 6px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .time-content {
+            .book-free {
+                padding-bottom: 6px;
+                font-size     : 15px;
+                color         : #38d2eb;
+            }
+
+            .time-content-btns {
+                display  : flex;
+                gap      : 10px;
+                flex-wrap: wrap;
+                margin   : 15px auto;
+
+                button {
+                    background         : #fff8ae;
+                    // width      : 100%;
+                    padding          : 5px 5px;
+                    font-weight        : 600;
+                    font-size          : 16px;
+                    border             : 3px solid transparent;
+                    outline            : none;
+                    cursor             : pointer;
+                    // color         : #ffff;
+
+                    // opacity: 0.7;
+
+                    &:hover {
+                        // background: #83d2eb;
+                        border: 3px solid#38d2eb;
+                    }
+
+
+
+                    &.active {
+                        background: #4ad245;
+                        color     : #fff;
+                    }
+
+                }
+
+                .btn-schedule-doctor-vi {
+
+                    min-width: 130px;
+                }
+
+                .btn-schedule-doctor-en {
+                    min-width: 180px;
+
+                }
+
+
+            }
+
+            .text-schedule-doctor {
+                color    : #38d2eb;
+                font-size: 15px;
+                ;
+                font-weight: 600;
+                font-style : italic;
+                padding    : 20px 0px;
+            }
+
+
+        }
+    }
+}

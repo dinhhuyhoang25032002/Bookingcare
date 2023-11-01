@@ -1,0 +1,50 @@
+.manage-schedule-container{
+    .manage-schedule-content{
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 600;
+        color: #0071ba;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .container{
+     //   border: 1px solid red;
+
+    
+        .manage-schedule-times{
+            display: flex;
+            gap: 10px;
+            width: 620px;
+            height: 130px;
+            flex-wrap: wrap;
+         //   border: 1px solid red;
+            margin:  15px auto;
+
+            
+               .btn-schedule-doctor{
+                height: 36px ;
+                background: #fff8ae;
+                width: 166px;
+                text-align: center ;
+                border:none;
+                outline: none;
+                opacity: 0.8;
+                padding: 10px 15px;
+                font-weight: bolder;
+                cursor: pointer;
+                &:hover{
+                    background: #f7d800;
+                    color: #fff;
+                    opacity: 1;
+                
+                }
+                &.active{
+                    background:#4ad245;
+                    color: #fff;
+                }
+               }
+              
+  
+        }
+    }
+}
