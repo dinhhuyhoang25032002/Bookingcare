@@ -2,28 +2,31 @@ import userService from '../services/userService'
 
 
 let handleLogin = async (req, res) => {
-    let email = req.body.email;
-    let password = req.body.password;
-    if (!email || !password) {
-        return res.status(500).json({
-            errCode: 1,
-            message: 'Missing input parameter!'
+    try {
+        let email = req.body.email;
+        let password = req.body.password;
+        if (!email || !password) {
+            return res.status(200).json({
+                errCode: 1,
+                errMessage: 'Missing input parameter!'
+            })
+        }
+        let userData = await userService.handleUserLogin(email, password)
+        res.cookie('jwt', userData.Token, { httpOnly: true, maxAge: 60 * 60 * 1000 })
+        return res.status(200).json(userData)
+    } catch (e) {
+        console.log(e)
+        return res.status(200).json({
+            errCode: -1,
+            errMessage: 'Error from server!'
         })
     }
-
-    let userData = await userService.handleUserLogin(email, password)
-    return res.status(200).json({
-        errCode: userData.errCode,
-        message: userData.errMessage,
-        user: userData.user ? userData.user : {}
-
-    })
 }
 
 let handleGetAllUser = async (req, res) => {
     let id = req.query.id;
     let users = await userService.getAllUser(id);
-    console.log(users)
+    // console.log(users)
     return res.status(200).json({
         errCode: 0,
         errMessage: 'oke',

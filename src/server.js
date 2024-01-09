@@ -1,10 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
-import viewEngine from "./config/viewEngine";
+import configViewEngine from "./config/viewEngine";
 import initWebRouters from './route/web';
 import connectDB from "./config/connectDB";
-
-require('dotenv').config();
+import cookieParser from 'cookie-parser'
+import dotenv from 'dotenv'
 
 let app = express();
 
@@ -26,14 +26,24 @@ app.use(function (req, res, next) {
 // app.use(bodyParser.json({limit:'50mb'}));
 // app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(bodyParser.json({limit:'50mb'}));
-app.use(bodyParser.urlencoded({ limit:'50mb', extended: true }))
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 
-viewEngine(app);
+//test jsonWebToken
+
+
+app.use(cookieParser())
+
+//
+configViewEngine(app);
 initWebRouters(app);
 connectDB();
+
+app.use((req, res) => {
+    return res.send('404 Not found!')
+})
 
 let port = process.env.PORT || 6969;
 app.listen(port, () => {
     console.log("Backend Node.js is running on the port: " + port);
-})
+}) 

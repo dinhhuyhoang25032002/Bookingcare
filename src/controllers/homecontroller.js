@@ -1,5 +1,5 @@
 import { json } from 'body-parser';
-import db from '../models/index';
+import db from '../config/index';
 import CRUDservice from '../services/CRUDservice';
 
 
@@ -52,7 +52,7 @@ let deleteCRUD = async (req, res) => {
     if (id) {
         await CRUDservice.deleteUserById(id);
         return res.send('delete user success!')
-    }else {
+    } else {
         return res.send('User not found!');
     }
 }

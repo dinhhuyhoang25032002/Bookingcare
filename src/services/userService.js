@@ -1,26 +1,27 @@
 import { promiseImpl } from "ejs";
 import db from "../models/index"
 import bcrypt from 'bcrypt';
+import { createJWT, verifyToken } from '../middleware/jwtAction'
+import dotenv from 'dotenv'
 
 let handleUserLogin = (email, password) => {
     return new Promise(async (resolve, reject) => {
         try {
             let userData = {};
             let isExist = await checkUserEmail(email);
+
             if (isExist) {
                 let user = await db.User.findOne({
                     attributes: ['email', 'roleID', 'passWord', 'firstName', 'lastName'],
                     where: { email: email },
-                    raw: true
-
-                    // exclude:['passWord']
-
+                    raw: true,
+                    //   exclude:['passWord']
                 });
                 if (user) {
                     let check = bcrypt.compareSync(password, user.passWord)
                     if (check) {
                         userData.errCode = 0,
-                            userData.errMessage = 'ok',
+                            userData.errMessage = 'Login successed',
 
                             delete user.passWord,
                             userData.user = user;
@@ -35,8 +36,13 @@ let handleUserLogin = (email, password) => {
 
             } else {
                 userData.errCode = 1;
-                userData.errMessage = `Your's email isn't exist in your system.Please try other email`
+                userData.errMessage = `Your's email isn't exist in your system. Please try other email`
             }
+
+            let jwt = createJWT(userData.user);
+            userData.Token = jwt;
+            userData.ExpireIn = process.env.EXPIRE_IN;
+           
             resolve(userData)
         } catch (e) {
             reject(e);

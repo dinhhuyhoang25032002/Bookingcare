@@ -1,6 +1,6 @@
 import db from "../models/index"
 require('dotenv').config();
-import _, { reject } from 'lodash'
+import _ from 'lodash'
 const MAX_NUMBER_SCHEDULE = process.env.MAX_NUMBER_SCHEDULE
 let getTopDoctorHomeService = (limitInput) => {
     return new Promise(async (resolve, reject) => {
@@ -8,13 +8,19 @@ let getTopDoctorHomeService = (limitInput) => {
             let users = await db.User.findAll({
                 limit: limitInput,
                 where: { roleID: 'R2' },
-                order: [["createdAt", 'DESC']],
+                order: [["id"]], //DESC
                 attributes: {
                     exclude: ['passWord']
                 },
                 include: [
                     { model: db.Allcode, as: 'positionData', attributes: ['valueEn', 'valueVi'] },
-                    { model: db.Allcode, as: 'genderData', attributes: ['valueEn', 'valueVi'] }
+                    { model: db.Allcode, as: 'genderData', attributes: ['valueEn', 'valueVi'] },
+                    {
+                        model: db.Doctor_infor,
+                        include: [
+                            { model: db.Specialty, as: 'specialtyData', attributes: ['name'] }
+                        ]
+                    }
                 ],
                 raw: true,
                 nest: true
@@ -50,19 +56,35 @@ let getAllDoctorsService = () => {
     })
 }
 
+
+let checkValidRequired = (inputData) => {
+    let arrCheckValid = ['doctorID', 'contentHTML', 'contentMarkdown', 'action'
+        , 'selectedProvince', 'selectedPrice', 'selectedPayment', 'nameClinic', 'addressClinic', 'selectedSpecialty', 'selectedClinic'];
+    let valueChecked = true;
+    let element = '';
+    for (let i = 0; i < arrCheckValid.length; i++) {
+        if (!inputData[arrCheckValid[i]]) {
+            valueChecked = false
+            element = arrCheckValid[i]
+            break;
+        }
+    }
+    return ({
+        valueChecked: valueChecked,
+        element: element
+    })
+}
+
 let saveInforDoctorsService = (inputData) => {
 
     return new Promise(async (resolve, reject) => {
 
         try {
-            if (!inputData.doctorID
-                || !inputData.contentHTML || !inputData.contentMarkdown
-                || !inputData.action || !inputData.selectedPrice
-                || !inputData.selectedProvince || !inputData.selectedPayment
-                || !inputData.nameClinic || !inputData.addressClinic) {
+            let isCheck = checkValidRequired(inputData)
+            if (isCheck.valueChecked === false) {
                 resolve({
-                    errCode: 1,
-                    errMessage: 'Missing parameter input'
+                    errCode: -1,
+                    errMessage: `Missing parameter input: ${isCheck.element}`
                 })
             } else {
                 //update and create markdown
@@ -71,8 +93,14 @@ let saveInforDoctorsService = (inputData) => {
                         contentHTML: inputData.contentHTML,
                         contentMarkdown: inputData.contentMarkdown,
                         description: inputData.description,
-                        doctorID: inputData.doctorID
+                        doctorID: inputData.doctorID,
+                        specialtyID: inputData.selectedSpecialty,
+                        clinicID: inputData.selectedClinic
+
                     })
+
+
+
                 } else if (inputData.action === 'EDIT') {
                     let doctorMarkdown = await db.Markdown.findOne({
                         where: { doctorID: inputData.doctorID },
@@ -83,12 +111,13 @@ let saveInforDoctorsService = (inputData) => {
                         doctorMarkdown.contentHTML = inputData.contentHTML;
                         doctorMarkdown.contentMarkdown = inputData.contentMarkdown;
                         doctorMarkdown.description = inputData.description;
-
-                        await doctorMarkdown.save()
-                    }
+                        doctorMarkdown.specialtyID = inputData.selectedSpecialty
+                        doctorMarkdown.clinicID = inputData.selectedClinic
+                    } await doctorMarkdown.save()
                 }
 
                 // update and create doctor infor
+
                 let doctorInfor = await db.Doctor_infor.findOne({
                     where: { doctorID: inputData.doctorID },
                     raw: false
@@ -101,10 +130,13 @@ let saveInforDoctorsService = (inputData) => {
                         doctorInfor.priceID = inputData.selectedPrice,
                         doctorInfor.nameClinic = inputData.nameClinic,
                         doctorInfor.addressClinic = inputData.addressClinic,
-                        doctorInfor.note = inputData.note
+                        doctorInfor.note = inputData.note,
+                        doctorInfor.specialtyID = inputData.selectedSpecialty,
+                        doctorInfor.clinicID = inputData.selectedClinic
 
                     await doctorInfor.save();
                 } else {
+
                     await db.Doctor_infor.create({
                         doctorID: inputData.doctorID,
                         provinceID: inputData.selectedProvince,
@@ -112,13 +144,16 @@ let saveInforDoctorsService = (inputData) => {
                         priceID: inputData.selectedPrice,
                         nameClinic: inputData.nameClinic,
                         addressClinic: inputData.addressClinic,
-                        note: inputData.note
+                        note: inputData.note,
+                        specialtyID: inputData.selectedSpecialty,
+                        clinicID: inputData.selectedClinic
                     })
                 }
                 resolve({
                     errCode: 0,
                     Message: 'Save infor doctor successed'
                 })
+
             }
         } catch (e) {
             reject(e)
@@ -153,7 +188,8 @@ let getInforDoctorsByIdService = (inputId) => {
                             include: [
                                 { model: db.Allcode, as: 'priceData', attributes: ['valueEn', 'valueVi'] },
                                 { model: db.Allcode, as: 'provinceData', attributes: ['valueEn', 'valueVi'] },
-                                { model: db.Allcode, as: 'paymentData', attributes: ['valueEn', 'valueVi'] }
+                                { model: db.Allcode, as: 'paymentData', attributes: ['valueEn', 'valueVi'] },
+                                { model: db.Specialty, as: 'specialtyData', attributes: ['name'] }
                             ]
                         }
 
@@ -163,7 +199,7 @@ let getInforDoctorsByIdService = (inputId) => {
                 })
 
                 if (data && data.image) {
-                    data.image = new Buffer(data.image, 'base64').toString('binary');
+                    data.image = Buffer.from(data.image, 'base64').toString('binary');
                 }
                 if (!data) data = {};
 
@@ -245,17 +281,17 @@ let getScheduleDoctorByDate = (doctorID, date) => {
                         {
                             model: db.User, as: 'doctorProfile', attributes: ['firstName', 'lastName']
                         }
-
                     ],
-                    attributes:{
-                        exclude:['id']
+                    attributes: {
+                        exclude: ['id', 'createdAt', 'updatedAt']
                     },
                     raw: false,
                     nest: true
                 })
-        
+                //  console.log ('check data',dataSchedule)
                 if (!dataSchedule)
                     dataSchedule = []
+
                 resolve({
                     errCode: 0,
                     Message: 'Data from server!',
@@ -330,8 +366,6 @@ let getFrofileDoctorInforById = (inputData) => {
                                 { model: db.Allcode, as: 'provinceData', attributes: ['valueVi', 'valueEn'] },
                                 { model: db.Allcode, as: 'paymentData', attributes: ['valueVi', 'valueEn'] }
                             ]
-
-
                         }
                     ],
                     raw: false,
@@ -339,7 +373,7 @@ let getFrofileDoctorInforById = (inputData) => {
 
                 })
                 if (data && data.image) {
-                    data.image = new Buffer(data.image, 'base64').toString('binary');
+                    data.image = Buffer.from(data.image, 'base64').toString('binary');
                 } else if (!data) data = {};
 
                 resolve({

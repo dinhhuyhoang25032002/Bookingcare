@@ -1,5 +1,5 @@
 'use strict';
-const {Model} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class Specialty extends Model {
         /**
@@ -9,14 +9,17 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            Specialty.hasOne(models.Doctor_infor, { foreignKey: 'specialtyID', as: 'specialtyData' })
+           // Schedule.belongsTo(models.Allcode, { foreignKey: 'timeType', targetKey: 'keyMap', as: 'timeTypeData' })
         }
     };
     Specialty.init({
         //id: DataTypes.INTEGER,
         name: DataTypes.STRING,
-        description: DataTypes.TEXT,
-        image: DataTypes.STRING,
-        
+        descriptionHTML: DataTypes.TEXT('long'),
+        descriptionMarkdown: DataTypes.TEXT('long'),
+        image: DataTypes.TEXT,
+
     }, {
 
         sequelize,

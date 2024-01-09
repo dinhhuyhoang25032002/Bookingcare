@@ -2,7 +2,7 @@ require('dotenv').config();
 import nodemailer from 'nodemailer'
 
 let checkActivityEmail = async (dataSend) => {
-    console.log('check dataSend', dataSend)
+   // console.log('check dataSend', dataSend)
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 465,
@@ -14,7 +14,7 @@ let checkActivityEmail = async (dataSend) => {
         }
     });
     let info = await transporter.sendMail({
-        from: '"Bookingcare" từ quản trị viên <hoangdinh3052@gmail.com>', // sender address
+        from: '"Bookingcare" từ quản trị viên <Bookingcare@gmail.com>', // sender address
         to: dataSend.email, // list of receivers
         subject: "Xác nhận thông tin khám bệnh", // Subject line
         // plain text body

@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import db from '../models/index';
+import db from '../config/index';
 let createNewUser = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -115,5 +115,5 @@ module.exports = {
     getUserInforById: getUserInforById,
     updateUserData: updateUserData,
     deleteUserById: deleteUserById,
-    
+
 };

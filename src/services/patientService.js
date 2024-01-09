@@ -12,7 +12,7 @@ let patientCofirmURL = (doctorID, token) => {
 let postPatientBookingInfor = (dataInput) => {
     return new Promise(async (resolve, reject) => {
 
-        // console.log('check dataInput: ', dataInput)
+        console.log('check dataInput: ', dataInput)
         try {
             if (!dataInput.email || !dataInput.doctorID ||
                 !dataInput.dateOfBirth || !dataInput.timeType ||
@@ -75,7 +75,7 @@ let postPatientBookingInfor = (dataInput) => {
 }
 
 let postConfirmPatientBookingInfor = (data) => {
-   // console.log('check data.tocken', data)
+    // console.log('check data.tocken', data)
     return new Promise(async (resolve, reject) => {
         try {
             if (!data.doctorID && !data.token) {
