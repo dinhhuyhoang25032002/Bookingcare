@@ -8,44 +8,40 @@ import { getScheduleDoctor } from '../../../services/userService'
 import { FormattedMessage } from 'react-intl';
 import Bookingcare from './Modal/Bookingcare';
 import { times } from 'lodash';
+
 class DoctorSchedule extends Component {
     constructor(props) {
         super(props);
         this.state = {
             allDays: [],
             allValueTime: [],
+            //idCurrent: 0,
             isShowModalSchesule: false,
             dataDoctorSchedule: {},
         }
     }
-    async componentDidMount() {
-        let { language } = this.props;
-        let allDays = this.getAllDays(language)
-        //   console.log('hoang check allDay: ', allDays)
-        this.setState({
-            allDays: allDays
-        })
+    componentDidMount() {
+        setTimeout(async () => {
+            let { language } = this.props;
+            let allDays = this.getAllDays(language)
+            //   console.log('hoang check allDay: ', allDays)
+            let idDoctorCurrent = this.props.inforDoctorFromParent
+        //    console.log('hoang check data: ', idDoctorCurrent)
+            if (this.props.inforDoctorFromParent && this.props.inforDoctorFromParent > 0) {
+                let response = await getScheduleDoctor(idDoctorCurrent, allDays[0].value);
+                this.setState({
+                    allValueTime: response.data ? response.data : [],
+                })
+            }
+            this.setState({
+                allDays: allDays,
+            })
+        }, 25)
+
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.language !== this.props.language) {
-            let language = this.props.language;
-            let allDays = this.getAllDays(language)
-            this.setState({
-                allDays: allDays
-            })
-        }
-        {
-            let language = this.props.language;
-            let allDays = this.getAllDays(language);
-            let idDoctorCurrent = this.props.inforDoctorFromParent
-            let response = await getScheduleDoctor(idDoctorCurrent, allDays[0].value);
-
-            this.setState({
-                allValueTime: response.data ? response.data : [],
-            })
-
-        }
+           
     }
     capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -97,7 +93,7 @@ class DoctorSchedule extends Component {
             } else {
 
             }
-            console.log('hoang check reponse from server: ', response)
+            // console.log('hoang check reponse from server: ', response)
         }
 
 

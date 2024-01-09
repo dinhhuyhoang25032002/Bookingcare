@@ -62,18 +62,40 @@ const getExtraDoctorInfor = (doctorID) => {
 
 }
 
-let getProfileDoctorById = (doctorID) => {
+const getProfileDoctorById = (doctorID) => {
     return axios.get(`/api/get-profile-doctor-infor-by-id?doctorID=${doctorID}`)
 }
-let postPatientBookingInfor = (data) => {
+const postPatientBookingInfor = (data) => {
     return axios.post('/api/patient-booking-infor', data)
 }
 
-let postConfirmPatientBookingInfor = (data) => {
+const postConfirmPatientBookingInfor = (data) => {
     return axios.post('/api/confirm-patient-booking-infor', data)
 }
+const postNewSpecialty = (data) => {
+    return axios.post('/api/create-new-specialty', data)
+}
 
-export {
+const getAllSpecialty = () => {
+    return axios.get(`/api/get-all-specialty`)
+}
+
+const getDoctorWithSpecialty = (data) => {
+    return axios.get(`/api/get-all-doctor-with-specialty-by-id?id=${data.id}&location=${data.location}`)
+}
+
+const postNewClinic = (data) => {
+    return axios.post('/api/create-new-clinic', data)
+}
+
+const getAllClinic = () => {
+    return axios.get(`/api/get-all-clinic`)
+}
+
+const getDoctorWithClinic = (data) => {
+    return axios.get(`/api/get-all-doctor-with-clinic-by-id?id=${data.id}`)
+}
+export  {
     handleLogin, getAllUsers,
     createNewUserFromService, deleteUserFromService,
     editUserFromService, getAllCodeService,
@@ -82,4 +104,6 @@ export {
     saveScheduleDoctor, getScheduleDoctor,
     getExtraDoctorInfor, getProfileDoctorById,
     postPatientBookingInfor, postConfirmPatientBookingInfor,
+    postNewSpecialty, getAllSpecialty, getDoctorWithSpecialty,
+    postNewClinic,getAllClinic,getDoctorWithClinic
 }

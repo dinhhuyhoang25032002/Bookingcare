@@ -5,6 +5,7 @@
 
     &.section-medical-facility {
         background: #d5f1fa;
+
     }
 
     &.section-hand-book {
@@ -79,12 +80,13 @@
                 height       : 226px;
                 margin-bottom: 35px;
                 margin       : 0 5px;
+                border-radius: 2px;
 
             }
 
             .bg-image {
 
-                width              : 278px;
+                width              : 266px;
                 height             : 150px;
                 cursor             : pointer;
                 margin-bottom      : 6px;
@@ -92,17 +94,20 @@
                 background-repeat  : no-repeat;
                 background-size    : cover;
                 background-color   : #eee;
+                border-radius      : 2px;
 
-                &.section-specialty {
-                    background-image: url('../../assets/image-specialty/co-xuong-khop.jpg');
-                }
+                // &.section-specialty {
+                //     //  background-image: url('../../assets/image-specialty/co-xuong-khop.jpg');
+                // }
 
                 &.section-medical-facility {
-                    background-image: url('../../assets/medicalfacility/golden-healthcarepng.png');
+                    //  position  : absolute;
+                    object-fit: contain;
+
                 }
 
                 &.prominent-doctor {
-                   
+
                     width        : 120px;
                     height       : 120px;
                     margin       : 9px auto;
@@ -116,51 +121,34 @@
                     &.image1 {
                         background-image: url('../../assets/Logo-news/express.jpg');
 
-                        border-radius: 10px;
-                        border       : 2px solid transparent;
-                        outline      : none;
-
-                        &:hover {
-                            outline: #959595;
-                            border : 2px solid #9e9999
-                        }
+                        border-radius   : 10px;
+                        // border       : 2px solid transparent;
+                        outline         : none;
                     }
 
                     &.image2 {
                         background-image: url('../../assets/Logo-news/vtcnew.jpg');
 
-                        border-radius: 10px;
-                        border       : 2px solid transparent;
-                        outline      : none;
-
-                        &:hover {
-                            border: 2px solid #9e9999
-                        }
+                        border-radius   : 10px;
+                        // border       : 2px solid transparent;
+                        outline         : none;
                     }
 
                     &.image3 {
                         background-image: url('../../assets/Logo-news/suckhoe.jpg');
 
-                        border-radius: 10px;
-                        border       : 2px solid transparent;
-                        outline      : none;
-
-                        &:hover {
-                            border: 2px solid #9e9999
-                        }
+                        border-radius    : 10px;
+                        //  border       : 2px solid transparent;
+                        outline          : none;
                     }
 
 
                     &.image4 {
                         background-image: url('../../assets/Logo-news/vtv1.png');
 
-                        border-radius: 10px;
-                        border       : 2px solid transparent;
-                        outline      : none;
-
-                        &:hover {
-                            border: 2px solid #9e9999
-                        }
+                        border-radius    : 10px;
+                        //  border       : 2px solid transparent;
+                        outline          : none;
                     }
                 }
 
@@ -171,7 +159,7 @@
             }
 
             .text-title {
-                width  : 42px;
+                //  width  : 42px;
                 color  : #9e9999;
                 cursor : pointer;
                 padding: 5px 0;
@@ -200,6 +188,10 @@
     &.section-about-video {
         height    : 480px;
         background: #ecf7db;
+    }
+
+    &.section-medical-facility {
+        height: 360px;
     }
 
     .specialty-container {

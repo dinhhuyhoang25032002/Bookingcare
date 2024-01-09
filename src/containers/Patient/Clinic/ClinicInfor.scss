@@ -1,0 +1,113 @@
+.infor-clinic-container {
+
+    background: #eee;
+    width     : 100vw;
+    overflow-y: hidden;
+
+    .description-container {
+        display       : flex;
+        flex-direction: column;
+        background    : white;
+        margin-bottom : 15px;
+
+        .description-clinic-hidden {
+            height       : 227px;
+            overflow     : hidden;
+            text-overflow: ellipsis;
+            margin-top   : 25px;
+            border-radius: 6px;
+            padding      : 0px 100px;
+
+            h4 {
+                font-size  : 18px;
+                font-weight: 400;
+
+            }
+
+            .name-clinic {
+                // color:
+                padding       : 8px;
+                margin-bottom : 38px;
+                text-align    : center;
+                text-transform: capitalize;
+                font-size     : 23px;
+                font-weight   : 600;
+                color         : #4bc4d3;
+            }
+        }
+
+        .description-clinic-full {
+            //  margin-top       : 25px;
+            //   box-shadow           : 1px 2px 0px #d6d6d6;
+            //  margin-bottom: 15px;
+            // background       : white;
+            border-radius        : 6px;
+            //  padding          : 15px;
+            padding              : 0px 100px;
+
+            h4 {
+                font-size  : 18px;
+                font-weight: 400;
+
+            }
+
+            .name-clinic {
+                // color:
+                padding       : 8px;
+                margin-bottom : 38px;
+                text-align    : center;
+                text-transform: capitalize;
+                font-size     : 23px;
+                font-weight   : 600;
+                color         : #4bc4d3;
+            }
+        }
+
+        button {
+            border     : none;
+            outline    : none;
+            background : none;
+            color      : #22a1b1;
+            font-size  : 15px;
+            width      : 92px;
+            height     : 32px;
+            margin-left: 100px;
+
+        }
+
+
+    }
+
+
+
+    .infor-clinic-body {
+        // background: white;
+        margin: 0 auto;
+        width : calc(100% - 200px);
+        height: calc(100% - 55px);
+
+        .all-doctors {
+            background   : white;
+            border-radius: 6px;
+            box-shadow   : 1px 3px 6px #d6d6d6;
+            height       : calc(100% - 150px);
+            display      : flex;
+            gap          : 11px;
+            margin-bottom: 15px;
+
+            .is-content-left {
+                width       : 50%;
+                padding     : 7px;
+                padding-left: 17px;
+            }
+
+            .is-content-right {
+                width: 50%;
+
+                // .content-up {}
+
+                // .content-down {}
+            }
+        }
+    }
+}

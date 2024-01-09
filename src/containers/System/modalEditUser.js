@@ -22,7 +22,7 @@ class ModalEditUser extends Component {
         let user = this.props.currentUser
         if (user && !_.isEmpty(user)) {
             this.setState({
-                id:user.id,
+                id: user.id,
                 email: user.email,
                 firstName: user.firstName,
                 lastName: user.lastName,
@@ -37,7 +37,7 @@ class ModalEditUser extends Component {
     }
 
     handleOnChangeInput = (event, id) => {
-        let copyState = { ... this.state };
+        let copyState = {... this.state};
         copyState[id] = event.target.value;
         this.setState({
             ...copyState

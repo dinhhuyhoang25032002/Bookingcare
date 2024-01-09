@@ -13,17 +13,18 @@ import HomeAbout from './Section/HomeAbout'
 class HomePage extends Component {
 
     render() {
+        // console.log('hoang check state home page: ',this.state)
         let settings = {
-            dots: false,
+            dots: true,
             infinite: false,
             speed: 500,
             slidesToShow: 4,
-            slidesToScroll: 1,
+            slidesToScroll: 3,
 
         };
         return (
             <div>
-                <HomeHeader isShowBanner ={true} />
+                <HomeHeader isShowBanner={true} />
                 <Specialty
                     settings={settings}
                 />
@@ -33,16 +34,16 @@ class HomePage extends Component {
                 <ProminentDoctor
                     settings={settings}
                 />
-                <HandBook
+                {/* <HandBook
                     settings={settings}
-                />
+                /> */}
                 <AboutVideo
                     settings={settings}
                 />
                 <HomeAbout
                     settings={settings}
                 />
-                <div style={{ height: '300px' }}></div>
+                {/* <div style={{ height: '300px' }}></div> */}
             </div>
         );
     }

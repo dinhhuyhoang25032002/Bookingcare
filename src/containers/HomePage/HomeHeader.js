@@ -5,37 +5,64 @@ import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils/constant'
 import { changeLanguageApp } from '../../store/actions/appActions'
 import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import MenuApp from './MenuApp';
 class HomeHeader extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isShow: false
+        }
+    }
     changeLanguage = (language) => {
         this.props.changeLanguageAppRedux(language)
 
     }
 
     returnToHome = () => {
+      //  let isLoggedIn = this.props
         if (this.props.history) {
             this.props.history.push(`/home`)
         }
     }
+    showMenuApp = () => {
+        this.setState({
+            isShow: !this.state.isShow
+        })
+    }
     render() {
-        let language = this.props.language
+        let language = this.props.language    
+        let isShow = this.state.isShow
         return (
             <React.Fragment>
                 <div className='home-header-container'>
+                    
                     <div className='home-header-content'>
                         <div className='left-content'>
-                            <i className="fas fa-bars"></i>
-                            <div className='header-logo'
-                                onClick={() => { this.returnToHome() }}
-                            >
+                            <div className='left-content-up'>
+                                <i className="fas fa-bars"
+                                    onClick={() => { this.showMenuApp() }} ></i>
 
+                                <div className='header-logo'
+                                    onClick={() => { this.returnToHome() }}
+                                >
+                                </div>
                             </div>
+
+                            {isShow === true ?
+                                <>
+                                    <MenuApp />
+
+                                </>
+                                : <></>
+                            }
                         </div>
                         <div className='center-content'>
-                            <div className='child-content'>
-                                <div><b><FormattedMessage id="homeheader.speciality" /> </b></div>
-                                <div className='subs-title'><FormattedMessage id="homeheader.searchdoctor" /></div>
-                            </div>
+                            <NavLink to='/' className='child-content'>
+                                <span><b><FormattedMessage id="homeheader.speciality" /> </b></span>
+                                <span className='subs-title'><FormattedMessage id="homeheader.searchdoctor" /></span>
+                            </NavLink>
                             <div className='child-content'>
                                 <div><b><FormattedMessage id="homeheader.health-facility" /></b></div>
                                 <div className='subs-title'><FormattedMessage id="homeheader.select-room" /></div>
@@ -52,11 +79,11 @@ class HomeHeader extends Component {
                         </div>
                         <div className='right-content'>
                             <div className='outline-support'>
-                                <div className='support'>
+                                <span className='support'>
                                     <i class="fa fa-headphones" aria-hidden="true"></i>
                                     <FormattedMessage id="homeheader.support" />
-                                </div>
-                                <span>022-6666-9999</span>
+                                </span>
+                                <span className='phone-number'>022-6666-9999</span>
                             </div>
                             <div className={language === LANGUAGES.VI ? 'language-VI active' : 'language-VI'}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span></div>
                             <div className={language === LANGUAGES.EN ? 'language-EN active' : 'language-EN'}><span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span></div>
@@ -67,12 +94,7 @@ class HomeHeader extends Component {
                 {this.props.isShowBanner === true &&
                     <div className='home-header-banner'>
                         <div className='content-up'>
-                            <div className='text-title1'><b><FormattedMessage id="banner.title1" /></b></div>
-                            <div className='text-title2'><b><FormattedMessage id="banner.title2" /></b></div>
-                            <div className='search-input'>
-                                <i className="fas fa-search"></i>
-                                <input type='text' placeholder='Tìm kiếm các vấn đề về sức khỏe'></input>
-                            </div>
+
                         </div>
 
                         <div className='content-down'>

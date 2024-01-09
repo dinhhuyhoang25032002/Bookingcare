@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import { getAllCodeService, createNewUserFromService, saveInforDoctorService, getAllUsers, deleteUserFromService, editUserFromService, getTopDoctorHomeService, getAllDoctorsService } from '../../services/userService'
+import { getAllCodeService, createNewUserFromService, saveInforDoctorService, getAllUsers, deleteUserFromService, editUserFromService, getTopDoctorHomeService, getAllDoctorsService, getAllSpecialty, getAllClinic } from '../../services/userService'
 import { toast } from 'react-toastify';
 
 //  export const fetchTypeDataStart = () => ({
@@ -237,6 +237,7 @@ export const fetchAllDoctors = () => {
         try {
             let response = await getAllDoctorsService()
             if (response && response.errCode === 0) {
+                console.log("check data doctor: ", response)
                 dispatch({
                     type: actionTypes.FETCH_ALL_DOCTORS_SUCCESS,
                     dataDr: response.data
@@ -309,13 +310,21 @@ export const fetchAllDoctorInforStart = () => {
             let responsePrice = await getAllCodeService("PRICE");
             let responsePayment = await getAllCodeService("PAYMENT");
             let responseProvince = await getAllCodeService("PROVINCE");
+            let responseSpecialty = await getAllSpecialty();
+            let responseClinic = await getAllClinic()
+
             if (responsePrice && responsePrice.errCode === 0
                 && responsePayment && responsePayment.errCode === 0
-                && responseProvince && responseProvince.errCode === 0) {
+                && responseProvince && responseProvince.errCode === 0
+                && responseSpecialty && responseSpecialty.errCode === 0
+                && responseClinic && responseClinic.errCode === 0
+            ) {
                 let data = {
                     responsePrice: responsePrice.data,
                     responsePayment: responsePayment.data,
-                    responseProvince: responseProvince.data
+                    responseProvince: responseProvince.data,
+                    responseSpecialty: responseSpecialty.data,
+                    responseClinic: responseClinic.data
                 }
                 dispatch({
                     type: actionTypes.FETCH_ALL_DOCTOR_INFOR_SUCCESS,

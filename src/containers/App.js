@@ -14,7 +14,11 @@ import HomePage from './HomePage/HomePage.js'
 import InforDoctor from './Patient/Doctor/InforDoctor'
 import CustomScrollbars from '../components/CustomScrollbars';
 import Doctor from '../routes/Doctor';
-import confirmBooking from '../containers/Patient/confirmBooking'
+import confirmBooking from '../containers/Patient/confirmBooking';
+import SpecialtyInfor from '../containers/Patient/Specialty/SpecialtyInfor'
+import ClinicInfor from '../containers/Patient/Clinic/ClinicInfor.js'
+import CreateAccount from '../containers/Auth/CreateAccount.js'
+import ForgotPassword from './Auth/ForgotPassword.js'
 class App extends Component {
 
     handlePersistorState = () => {
@@ -45,11 +49,16 @@ class App extends Component {
                                 <Switch>
                                     <Route path={path.HOME} exact component={(Home)} />
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
+                                    <Route path={path.CREATE_ACCOUNT} component={CreateAccount} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                     <Route path={path.HOMEPAGE} component={HomePage} />
                                     <Route path={path.INFOR_DOCTOR} component={InforDoctor} />
+                                    <Route path={path.INFOR_SPCIALTY} component={SpecialtyInfor} />
+                                    <Route path={path.INFOR_CLINIC} component={ClinicInfor} />
                                     <Route path={'/doctor/'} component={userIsAuthenticated(Doctor)} />
-                                    <Route path ={path.CONFIRM_BOOKING} component={confirmBooking}/>
+                                    <Route path={path.CONFIRM_BOOKING} component={confirmBooking} />
+                                    <Route path={path.FORGOT_PASSWORD} component={ForgotPassword} />
+
                                 </Switch>
                             </CustomScrollbars>
                         </div>

@@ -43,8 +43,8 @@ class InforDoctor extends Component {
         let nameEn = '', nameVi = ''
         let { language } = this.props
         if (inforDoctor && inforDoctor.positionData) {
-            nameVi = `${inforDoctor.positionData.valueVi}, ${inforDoctor.firstName} ${inforDoctor.lastName}`
-            nameEn = `${inforDoctor.positionData.valueEn}, ${inforDoctor.firstName} ${inforDoctor.lastName}`
+            nameVi = `${inforDoctor.positionData.valueVi}. ${inforDoctor.firstName} ${inforDoctor.lastName}`
+            nameEn = `${inforDoctor.positionData.valueEn}. ${inforDoctor.firstName} ${inforDoctor.lastName}`
         }
         return (
             <div>
@@ -87,6 +87,7 @@ class InforDoctor extends Component {
                         <div className='doctor-information'>
                             {inforDoctor && inforDoctor.Markdown && inforDoctor.Markdown.contentHTML &&
                                 <div dangerouslySetInnerHTML={{ __html: inforDoctor.Markdown.contentHTML }}></div>
+                                // <div></div>
                             }
                         </div>
                         <div className='medical-examination-feedback'></div>

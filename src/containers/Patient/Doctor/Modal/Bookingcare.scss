@@ -9,19 +9,17 @@
         .bookingcare-header {
             padding        : 10px 15px;
             padding-bottom : 0px;
-            padding-top    : 20px;
             display        : flex;
             justify-content: space-between;
             align-items    : center;
 
             .logo-image {
-                width              : 120px;
-                height             : 40px;
+                width              : 159px;
+                height             : 51px;
                 background-image   : url(../../../../assets/logo.svg);
-                background-position: left center;
+                background-position: center;
                 background-repeat  : no-repeat;
-
-                background-size: contain;
+                background-size    : cover;
             }
 
             //  height         : 10%;
@@ -113,13 +111,15 @@
                     align-items    : center;
 
                     input {
-                        padding-left  : 30px;
+                        padding-left    : 30px;
                         //text-transform: capitalize;
-                        margin-left   : 1%;
+                        margin-left     : 1%;
                     }
-                    .uptext{
+
+                    .uptext {
                         text-transform: capitalize;
                     }
+
                     i {
                         margin-right     : -24px;
                         z-index          : 2;
@@ -154,10 +154,10 @@
                     //  align-items    : center;
 
                     input {
-                        padding-left  : 30px;
-                        padding-bottom: 57px;
-                       // text-transform: capitalize;
-                        height        : 80px;
+                        padding-left     : 30px;
+                        padding-bottom   : 57px;
+                        // text-transform: capitalize;
+                        height           : 80px;
                     }
 
                     i {
@@ -222,7 +222,7 @@
                             width: 60px;
                         }
 
-                       
+
 
                         .checkmark {
                             margin-left: 4px;

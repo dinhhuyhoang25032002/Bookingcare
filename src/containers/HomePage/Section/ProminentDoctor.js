@@ -5,6 +5,7 @@ import * as actions from '../../../store/actions';
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
 import { withRouter } from 'react-router';
+
 class ProminentDoctor extends Component {
 
     constructor(props) {
@@ -28,13 +29,13 @@ class ProminentDoctor extends Component {
         if (this.props.history) {
             this.props.history.push(`/infor-doctor/${doctor.id}`)
         }
-
+      //  console.log('check pros : ', this.props)
     }
 
     render() {
         let arrDoctors = this.state.arrDoctors
         let language = this.props.language
-        console.log('check pros: ', arrDoctors)
+        //   console.log('check pros arrDoctors: ', arrDoctors)
         // arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors)
         return (
             <div className='section-share prominent-doctor section-prominent-doctor'>
@@ -48,6 +49,7 @@ class ProminentDoctor extends Component {
 
                             {arrDoctors && arrDoctors.length > 0
                                 && arrDoctors.map((item, index) => {
+                                    let data = item.Doctor_infor.specialtyData;
                                     let imageBase64 = ''
                                     if (item.image) {
                                         imageBase64 = new Buffer(item.image, 'base64').toString('binary');
@@ -67,9 +69,11 @@ class ProminentDoctor extends Component {
                                                     />
                                                 </div>
                                                 <div className='position text-center'>
+
                                                     <span className='text-title '>{language === LANGUAGES.VI ? nameVi : nameEn}</span>
-                                                    <div>Da liễu</div>
+                                                    <div className='text-center text-title'>{data.name}</div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     )

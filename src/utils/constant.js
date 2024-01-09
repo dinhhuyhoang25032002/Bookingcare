@@ -5,7 +5,11 @@ export const path = {
     LOG_OUT: '/logout',
     SYSTEM: '/system',
     INFOR_DOCTOR: '/infor-doctor/:id',
+    INFOR_SPCIALTY: '/infor-specialty/:id',
+    INFOR_CLINIC: '/infor-clinic/:id',
+    CREATE_ACCOUNT:'/create-account',
     CONFIRM_BOOKING: '/confirm-schedule',
+    FORGOT_PASSWORD:'/forgot-password'
 
 };
 

@@ -76,7 +76,7 @@ class UserRedux extends Component {
                 role: arrRole && arrRole.length > 0 ? arrRole[0].keyMap : '',
                 avatar: '',
                 action: CRUD_ACTIONS.CREATE,
-                updateImage:'',
+                updateImage: '',
             })
         }
     }
@@ -140,7 +140,7 @@ class UserRedux extends Component {
                 roleID: this.state.role,
                 positionID: this.state.position,
                 avatar: this.state.avatar,
-                
+
             })
         }
         if (action === CRUD_ACTIONS.EDIT) {
@@ -266,13 +266,16 @@ class UserRedux extends Component {
 
                                 </select>
                             </div>
+                            
                             <div className='col-6'>
                                 <label><FormattedMessage id='manage-user.image' /></label>
                                 <div className='update-avatar'>
                                     <input id='update-image' type='file' hidden
                                         // value={avatar}
                                         onChange={(event) => { this.handleUpdateImage(event) }} />
+
                                     <label className='label-update' htmlFor="update-image"> Tải ảnh <i className="fas fa-upload"></i></label>
+
                                     <div className='preview-image'
                                         style={{ backgroundImage: `url(${this.state.updateImage})` }}
                                         onClick={() => { this.handlePreviewImage() }}

@@ -1,0 +1,103 @@
+.infor-specialty-container {
+
+    background: #eee;
+    width     : 100vw;
+    overflow-y: hidden;
+
+    .description-container {
+        display       : flex;
+        flex-direction: column;
+        background    : white;
+
+        .description-specialty-hidden {
+
+            height                           : 205px;
+            //  padding-bottom  : 50px !important;
+            overflow                         : hidden;
+            text-overflow                    : ellipsis;
+            margin-top                       : 25px;
+            // box-shadow                    : 1px 2px 0px #d6d6d6;
+            //    margin-bottom       : 15px;
+            //  background                : white;
+            border-radius                    : 6px;
+            // padding                   : 15px;
+            padding-left                     : 100px;
+            // width        : 100vw;
+        }
+
+        .description-specialty-full {
+            //  margin-top       : 25px;
+            //   box-shadow           : 1px 2px 0px #d6d6d6;
+            //  margin-bottom: 15px;
+            // background       : white;
+            border-radius        : 6px;
+            //  padding          : 15px;
+            padding-left         : 100px;
+        }
+
+        button {
+            border     : none;
+            outline    : none;
+            background : none;
+            color      : #22a1b1;
+            font-size  : 15px;
+            width      : 92px;
+            height     : 32px;
+            margin-left: 100px;
+
+        }
+
+
+    }
+
+
+
+    .infor-specialty-body {
+        // background: white;
+        margin: 0 auto;
+        width : calc(100% - 200px);
+        height: calc(100% - 55px);
+
+
+
+        .search-province {
+            select {
+                word-wrap         : normal;
+                margin            : 15px 0px 15px;
+                height            : 26px;
+                text-align        : center;
+                outline           : none;
+                border            : none;
+                // padding-left   : 8px;
+                cursor            : pointer;
+
+            }
+
+
+        }
+
+        .all-doctors {
+            background   : white;
+            border-radius: 6px;
+            box-shadow   : 1px 3px 6px #d6d6d6;
+            height       : calc(100% - 150px);
+            display      : flex;
+            gap          : 11px;
+            margin-bottom: 15px;
+
+            .is-content-left {
+                width       : 50%;
+                padding     : 7px;
+                padding-left: 17px;
+            }
+
+            .is-content-right {
+                width: 50%;
+
+                // .content-up {}
+
+                // .content-down {}
+            }
+        }
+    }
+}

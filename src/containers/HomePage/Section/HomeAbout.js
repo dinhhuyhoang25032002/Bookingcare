@@ -13,7 +13,7 @@ class HomeAbout extends Component {
             <div className=' section-home-about'>
 
                 <p><b>&copy; 2023</b>     Contact or Review BookingCare's Services.
-                    <a target="_blank" href='https://bookingcare.vn/'> __click here__
+                    <a target="_blank" rel="noreferrer" href='https://bookingcare.vn/'> __click here__
                     </a>
                 </p>
             </div >

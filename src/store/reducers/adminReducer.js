@@ -32,7 +32,7 @@ const adminReducer = (state = initialState, action) => {
 
             }
         case actionTypes.FETCH_GENDER_FAILED:
-            console.log('fire chec3k', action)
+          //  console.log('fire chec3k', action)
             state.isLoginGender = false
             state.genders = [];
             return {

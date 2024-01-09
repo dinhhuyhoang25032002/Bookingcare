@@ -83,7 +83,7 @@ class confirmBooking extends Component {
                         <div className='confirm-booking-content'>
                             <div className='title'>Bookingcare cam kết đặt sức khỏe người bệnh <br></br>và chất lượng phục vụ lên hàng đầu.</div>
 
-                            <div className='confirm-title'>Bạn đã xác nhận thành công lịch khám bệnh. Hệ thống đã xác thực lịch khám</div>
+                            <div className='confirm-title'>Bạn đã xác nhận thành công lịch khám bệnh.<br></br> Hệ thống đã xác thực lịch khám.</div>
                             <div className='note-doctor'>
                                 <i className="fas fa-plus-circle"></i>
                                 <input
@@ -92,7 +92,10 @@ class confirmBooking extends Component {
                                 ></input></div>
 
                             <div className='note-client'><b>Lưu ý cho khách hàng:</b></div>
-                            <div className='number-phone'>* Khách hàng có thể hủy lịch khám đã đặt bằng hotline của Bookingcare <label>(022-6666-9999)</label>.</div>
+                            <div>* Bạn sẽ nhận được phản hồi từ bác sĩ trụ trách sau khi đã xác định lịch hẹn thành công (khoảng 2 giờ sau).</div>
+                            <div>* Trong trường hợp không nhận được phản hồi từ bác sĩ hoặc bạn muốn hủy lịch khám bệnh, bạn có thể liên hệ và trao đổi với chúng tôi tại <a href='Bookingcare.vn'>Bookingcare.com</a>.
+                            </div>
+                            <div>* Gọi trực tiếp đến hotline của Bookingcare <label>(022-6666-9999)</label> để được trợ giúp trực tiếp từ bộ phận CSKH.</div>
                             <div>* Khách hàng có thể đặt lại lịch khám với bác sĩ. </div>
                             <div>* Booking care có trách nhiệm tiếp nhận phản hồi, khiếu nại và hỗ trợ khách hàng liên quan đến việc sử dụng dịch vụ tại <a href='Bookingcare.vn'> Bookingcare.com.</a>.</div>
                             <div>* Khách hàng tự ý hủy dịch vụ 2 lần liên tiếp, Bookingcare có thể cân nhắc không tiếp tục hỗ trợ dịch vụ.</div>
@@ -101,13 +104,13 @@ class confirmBooking extends Component {
                         :
                         <div className='confirm-booking-content'>
                             <div className='title'>Bookingcare cam kết đặt sức khỏe người bệnh <br></br>và chất lượng phục vụ lên hàng đầu.</div>
-                            <div className='confirm-title'>Có vẻ như bạn đã không đặt thành công lịch khám bệnh hoặc lịch khám đã tồn tại. <br></br>Hệ thống không thể xác nhận lịch hẹn của bạn.</div>
+                            <div className='confirm-title'>Có vẻ như lịch khám bệnh của bạn đặt đã được xác thực trước đó. <br></br>Hệ thống đã cập nhật dữ liệu lịch hẹn khám bệnh của bạn.</div>
                             <div><b>Một số giải pháp Bookingcare dành cho bạn:</b></div>
-                            <div>* Bạn có thể đặt lại lịch khám tại <a href='Bookingcare.vn'>Bookingcare.com</a>.
+                            <div>* Nếu đặt lịch thành công bạn sẽ nhận được phản hồi từ bác sĩ phụ trách (sau 2 giờ)</div>
+                            <div>* Trong trường hợp không nhận được phản hồi từ bác sĩ hoặc muốn hủy lịch khám bệnh, bạn có thể liên hệ và trao đổi với chúng tôi tại <a href='Bookingcare.vn'>Bookingcare.com</a>.
                             </div>
-                            <div>* Gọi trực tiếp đến hotline của Bookingcare <label>(022-6666-9999)</label> để được trợ giúp trực tiếp từ bộ phận CSKH nếu không nhận được phản hồi nào trong 2 giờ kế tiếp.</div>
+                            <div>* Gọi trực tiếp đến hotline của Bookingcare <label>(022-6666-9999)</label> để được trợ giúp trực tiếp từ bộ phận CSKH.</div>
                             <div className='note-client note'><b>Lưu ý cho khách hàng:</b></div>
-                            <div className='number-phone'>* Khách hàng có thể hủy lịch khám đã đặt bằng hotline của Bookingcare <label>(022-6666-9999)</label>.</div>
                             <div>* Khách hàng có thể đặt lại lịch khám với bác sĩ. </div>
                             <div>* Booking care có trách nhiệm tiếp nhận phản hồi, khiếu nại và hỗ trợ khách hàng liên quan đến việc sử dụng dịch vụ tại <a href='Bookingcare.vn'> Bookingcare.com.</a>.</div>
                             <div>* Khách hàng tự ý hủy dịch vụ 2 lần liên tiếp, Bookingcare có thể cân nhắc không tiếp tục hỗ trợ dịch vụ.</div>

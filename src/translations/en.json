@@ -46,11 +46,14 @@
             "specialty": "Specialty",
             "manage-specialty": "Manage Specialty",
             "handbook": "Handbook",
-            "manage-handbook": "Manage Handbook"
+            "manage-handbook": "Manage Handbook",
+            "Back-to-home":"Back to home",
+            "Option":"Option"
         },
         "doctor": {
             "manage-schedule": "Manage Doctor's Schedule",
-            "schedule": "Schedule"
+            "schedule": "Schedule",
+            "manage-patient":"Manage Patients"
         }
     },
     "manage-user": {
@@ -74,7 +77,9 @@
     },
     "homepage": {
         "Prominent-Doctor-In-Week": "Prominent Doctor In Week",
-        "Search-more": "Search More"
+        "Search-more": "Search More",
+        "Common-Specializations": "Common Specializations",
+        "Prominent-Healthcare-Facility": "Prominent Healthcare Facility"
     },
     "manage-schedule": {
         "title": "Managing the doctor's medical examination schedule",
@@ -122,9 +127,12 @@
             "provice": "Select province",
             "nameClinic": "Clinic Name",
             "addressClinic": "nameClinic Address",
-            "note": "Explanation"
+            "note": "Explanation",
+            "specialty": "Choose a specialty",
+            "clinic": "Choose a clinic"
         }
     },
+    "10": "Dr. Vu Ngoc Anh Thư, with 10 years of experience in diagnosing and treating mental health disorders, is currently working in the Psychiatry Department at the Mental Hospital of Ho Chi Minh City. The doctor accepts patients aged 10 and above.",
     "30": "Doctor Nguyen Trong Tuan, Specialist I with nearly 20 years of experience in examining, diagnosing, and treating mental health disorders, is currently working at the Mental Hospital in Ho Chi Minh City. He has undergone practical training in the FFI program specializing in Mental Health at Tenon Hospital in the Republic of France. Doctor Tuan accepts patients for consultation and treatment from the age of 10 and above.",
     "152/6 Thành Thái, phường 12, quận 10, TP.HCM": " 152/6 Thanh Thai, phuong 12, quan 10, TP.HCM",
     "29": "Head of the Joint Department, Hanoi Medical University Former physician at the Orthopedics Department, Bach Mai HospitalCurrently serving as the Vice President of the Hanoi Rheumatology Association.",
@@ -132,5 +140,14 @@
     "27": "Master, Doctor Doan Thi Lan. Doctor specializing in nutrition consultation for pregnant women and children. Many years of experience in the field of nutrition consultation.",
     "Số 52 Nguyễn Chí Thanh - Đống Đa - Hà Nội": " So 52 Nguyen Chi Thanh - Đong Đa - Ha Noi",
     "28": "Deputy Director, Head of the Reproductive Support Department Nam Hoc and Infertility Hospital, Hanoi With over 10 years of experience, Dr. Le Thi Thu Hien is a specialist in Reproductive Support and In vitro Fertilization (IVF). She welcomes patients of all ages for consultation",
-    "431 Tam Trinh (Lô 01 - 8A), Hoàng Mai, Hà Nội": " 431 Tam Trinh (L0 01 - 8A), Hoang Mai, Ha Noi"
+    "431 Tam Trinh (Lô 01 - 8A), Hoàng Mai, Hà Nội": " 431 Tam Trinh (L0 01 - 8A), Hoang Mai, Ha Noi",
+    "31": "Professor, Doctor Ha Van Quyet, an expert with over 35 years of experience in the field of Gastrointestinal Diseases, is a pioneering specialist in this field. He serves as the Director of the Hanoi University Hospital and is a physician who conducts examinations for patients aged 3 and above.",
+    "Số 1B Trần Hưng Đạo, Quận Hai Bà Trưng, Hà Nội": " So 1B Tran Hung Đao, Quan Hai Ba Trung, Ha Noi",
+    "32": "Specialist Doctor II Tran Minh Khuyen, former Head of the Clinical Department of Mental Health in Ho Chi Minh City, graduated in Psychotherapy from the Practical Psychology School of Paris (Psychology Practique de Paris). The doctor is available for consultations for individuals aged 16 and above.",
+    "20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM": " 20-22 Duong Quang Trung, Phuong 12, Quan 10, Tp. HCM",
+    "33": "Professor, Dr. Ha Van Quyet, an expert with over 35 years of experience in the field of Gastrointestinal Diseases, is a leading specialist in this area. He serves as the Director of the Hanoi University Hospital and is a physician who conducts examinations for patients aged 3 and above.",
+    "34 Đại Cồ Việt, Hai Bà Trưng, Hà Nội": " 34 Dai Co Viet, Hai Ba Trung, Ha Noi",
+    "34": "Doctor, Dr. Nguyen Thi Ut, with nearly 40 years of experience in the field of Gastroenterology and Hepatology, has received education and training in the Soviet Union. She has worked at An Binh Hospital and the University Medical Center in Ho Chi Minh City. The doctor is available for consultations for individuals aged 15 and above.",
+    "39": "With over 10 years of experience working in Emergency, Orthopedics, and Geriatrics departments, I am a doctor currently employed at the Medical Examination Department of Nguyen Tri Phuong Hospital. Additionally, I serve as a senior expert at the Ningen Dock Bernard Center. I provide medical examinations for individuals aged 15 and above.",
+    "201 đường Nam Kỳ Khởi Nghĩa, Võ Thị Sáu, Quận 3, Thành phố Hồ Chí Minh": " 201 đuong Nam Ky Khoi Nghia, Vo Thi Sau, Quan 3, Thanh pho Ho Chi Minh"
 }

@@ -42,11 +42,11 @@
 
 
         .consultation-fee-isShow {
-            padding-top   : 5px;
-            padding-bottom: 3px;
-            background    : #f8f8f8;
-            display       : grid;
-            border        : 1px solid #dddddd;
+            padding-top: 5px;
+
+            background: #f8f8f8;
+            display   : grid;
+            border    : 1px solid #dddddd;
 
             span {
                 margin: 0px 5px;
@@ -73,15 +73,17 @@
             background-repeat    : no-repeat;
             background-size      : contain;
             //padding-top        : 8px;
-            height               : 39px;
+            height               : 55px;
             width                : 206px;
-            margin               : 7px auto;
+            margin               : 0px auto;
+            margin-top           : 5px;
 
 
         }
 
         .consultation-fee {
-            padding-top: 15px;
+            padding-top   : 10px;
+            padding-bottom: 7px;
 
             .view-detail {
                 cursor     : pointer;

@@ -20,7 +20,7 @@
         "Medical-diagnostics": "Xét nghiệm y học",
         "Mental-health": "Sức khỏe tinh thần",
         "House-call": "Khám tại nhà",
-        "search": "Tìm kiếm mọi vấn đề về sức khỏe"
+        "search": "Tìm kiếm các vấn đề về sức khỏe"
     },
     "menu": {
         "system": {
@@ -46,11 +46,14 @@
             "specialty": "Chuyên khoa",
             "manage-specialty": "Quản lí chuyên khoa",
             "handbook": "Cẩm nang",
-            "manage-handbook": "Quản lí cẩm nang"
+            "manage-handbook": "Quản lí cẩm nang",
+            "Back-to-home": "Quay lại trang chủ",
+            "Option": "Lựa chọn khác"
         },
         "doctor": {
             "manage-schedule": "Quản lí kế hoạch khám bệnh",
-            "schedule": "Kế hoạch"
+            "schedule": "Kế hoạch",
+            "manage-patient": "Quản lí bệnh nhân khám bệnh"
         }
     },
     "manage-user": {
@@ -74,7 +77,9 @@
     },
     "homepage": {
         "Prominent-Doctor-In-Week": "Bác sĩ nổi bật tuần qua",
-        "Search-more": "Tìm kiếm"
+        "Search-more": "Tìm kiếm",
+        "Common-Specializations": "Chuyên khoa khổ biến",
+        "Prominent-Healthcare-Facility": "Cở sở y tế nổi bật"
     },
     "manage-schedule": {
         "title": "Quản lí lịch khám bệnh của bác sĩ",
@@ -107,7 +112,7 @@
             "later": "Thanh toán sau tại cơ sở y tế: ",
             "btn-submit": "Xác nhận đặt lịch khám bệnh",
             "sociation": "Được hỗ trợ các chính sách xã hội khác",
-            "booking-free":"Miễn phí đặt lịch khám"
+            "booking-free": "Miễn phí đặt lịch khám"
         }
     },
     "admin": {
@@ -123,7 +128,8 @@
             "nameClinic": "Tên phòng khám",
             "addressClinic": "Địa chỉ phòng khám",
             "note": "Chú thích",
-            "note-detailt": ""
+            "specialty": "Chọn chuyên khoa",
+            "clinic": "Chọn phòng khám"
         }
     }
 }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { push } from "connected-react-router";
 import * as actions from "../../store/actions";
 import './Login.scss';
+import { withRouter } from 'react-router';
 //import { FormattedMessage } from 'react-intl';
 import { handleLogin } from '../../../src/services/userService';
 
@@ -49,10 +50,10 @@ class Login extends Component {
         try {
 
             let data = await handleLogin(this.state.username, this.state.password);
-
+            console.log('hoàng check data:', data);
             if (data && data.errCode !== 0) {
                 this.setState({
-                    errMessage: data.message
+                    errMessage: data.errMessage
                 })
             }
             if (data && data.errCode === 0) {
@@ -62,7 +63,7 @@ class Login extends Component {
             if (e.response) {
                 if (e.response.data) {
                     this.setState({
-                        errMessage: e.response.data.message
+                        errMessage: e.response.data.errMessage
                     })
                 }
             }
@@ -72,18 +73,31 @@ class Login extends Component {
     }
 
     handleKeyDown = (event) => {
-        console.log('check event: ', event)
+        //  console.log('check event: ', event)
         if (event.key === 'Enter' || event.keyCode === 13) {
             this.handleLogin()
         }
     }
 
+    handleCreateAccount = () => {
+        if (this.props.history) {
+            this.props.history.push(`/create-account`)
+        }
+    }
+    handleForgotPassWord =()=>{
+        if (this.props.history) {
+            this.props.history.push(`/forgot-password`)
+        }
+    }
     render() {
         return (
             <div className='login-backgroud'>
                 <div className='login-container'>
                     <div className='login-content row'>
-                        <div className='col-12 text-login'>Login</div>
+                        <div className='col-12 logo-web'>
+
+                        </div>
+                        <div className='col-12 text-login'>Sign In</div>
                         <div className='col-12 form-group login-input'>
                             <label>UserName</label>
                             <input type='text' className='form-control' placeholder='Email' value={this.state.username}
@@ -114,22 +128,21 @@ class Login extends Component {
                             <label className='text-remember'> Remember Me</label>
                         </div>
                         <div className='col-12'>
-                            <button className='btn-login' onClick={() => { this.handleLogin() }}>Log in</button>
+                            <button className='btn-login' onClick={() => { this.handleLogin() }}>Sign In</button>
                         </div>
-                        <div className='col-12'>
-                            <span className='forgot-password'>
+                        <div className='col-12 create-forgot-password'>
+                            <span className='forgot-password'
+                                onClick={() => { this.handleCreateAccount() }}
+                            >
+                                Create a account
+                            </span>
+                            <span className='forgot-password'
+                            onClick={()=>{this.handleForgotPassWord()}}
+                            >
                                 Forgot your password?
                             </span>
                         </div>
-                        <div className='col-12 text-center mt-5'>
-                            <span className='text-other-login'>
-                                Or login with:
-                            </span>
-                        </div>
-                        <div className='col-12 social-login mt-4'>
-                            <i className="fab fa-google-plus-g google"></i>
-                            <i className="fab fa-facebook-f facebook"></i>
-                        </div>
+
                     </div>
                 </div>
             </div >
@@ -151,4 +164,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

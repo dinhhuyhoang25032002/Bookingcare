@@ -11,7 +11,7 @@ import { LANGUAGES } from '../../../../utils';
 import DatePicker from '../../../../components/Input/DatePicker';
 import { toast } from 'react-toastify';
 import moment from 'moment';
-import localization from 'moment/locale/vi';
+import localization from 'moment/locale/vi'; // very important
 
 
 
@@ -120,7 +120,7 @@ class Bookingcare extends Component {
     builDoctorNameBooking = (dataDoctorSchedule) => {
         let { language } = this.props;
         if (dataDoctorSchedule && !_.isEmpty(dataDoctorSchedule)) {
-            let doctorName = language === LANGUAGES.VI?
+            let doctorName = language === LANGUAGES.VI ?
                 `${dataDoctorSchedule.doctorProfile.firstName} ${dataDoctorSchedule.doctorProfile.lastName}`
                 :
                 `${dataDoctorSchedule.doctorProfile.lastName} ${dataDoctorSchedule.doctorProfile.firstName}`
@@ -128,11 +128,11 @@ class Bookingcare extends Component {
             return doctorName;
 
         }
-        return 
+        return
 
     }
-    
-   
+
+
     submitPatientBookingInfor = async () => {
         let date = new Date(this.state.dateOfBirth).getTime();
         // console.log('check data time: ', this.state, date);
@@ -194,19 +194,22 @@ class Bookingcare extends Component {
                 doctorID: this.state.doctorID,
                 timeType: this.state.timeType
             })
+            {
+                language === LANGUAGES.VI ? toast.error('Bạn đang nhập thiếu dữ liệu đầu vào, Hãy kiểm tra lại!') :
+                    toast.error("You are entering incomplete input data. Please check again")
+            }
 
         }
-        {
-            language === LANGUAGES.VI ? toast.error('Bạn đang nhập thiếu dữ liệu đầu vào, Hãy kiểm tra lại!') :
-                toast.error("You are entering incomplete input data. Please check again")
-        }
+
+
 
     }
 
     render() {
-        let { dataProfile, } = this.state;
+        let { dataProfile, doctorID } = this.state;
         let { isshowModal, closeModalDoctorSchedule, language, dataDoctorSchedule } = this.props;
-        console.log('check data time: ', dataDoctorSchedule);
+        // console.log('ddasdjfjsdh: ', dataProfile)
+        // console.log('check data time: ', dataDoctorSchedule);
 
         return (
             <Modal
@@ -219,17 +222,15 @@ class Bookingcare extends Component {
                 <div className='bookingcare-content'>
                     <div className='bookingcare-header'>
                         <div className='logo-image'></div>
-                        <span>
-                            <i className="fas fa-times"
-                                onClick={closeModalDoctorSchedule}
-                            ></i>
-                        </span>
+                        <i className="fas fa-times"
+                            onClick={closeModalDoctorSchedule}
+                        ></i>
                     </div>
 
                     <div className='bookingcare-body'>
                         <h3><FormattedMessage id='patient.modal-booking.title-booking' /></h3>
                         <ProfileDoctor
-                            dataProfile={dataProfile}
+                            doctorID={doctorID}
                             isShowDescription={false}
                             dataDoctorSchedule={dataDoctorSchedule}
                         />
