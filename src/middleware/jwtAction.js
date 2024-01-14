@@ -2,16 +2,16 @@ import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import _ from 'lodash'
 
-let createJWT = (payload) => {
-    let key = process.env.ACCEPT_PRIVATE_KEY;
-    let token = null;
-    try {
-        token = jwt.sign(payload, key, { expiresIn: 60 * 60 }, { algorithm: 'RS256' });
-    } catch (err) {
-        console.log(err)
-    }
-    return token;
-}
+// let createJWT = (payload) => {
+//     let key = process.env.ACCEPT_PRIVATE_KEY;
+//     let token = null;
+//     try {
+//         token = jwt.sign(payload, key, { expiresIn: 60 * 60 }, { algorithm: 'RS256' });
+//     } catch (err) {
+//         console.log(err)
+//     }
+//     return token;
+// }
 
 let verifyToken = (token) => {
     let key = process.env.ACCEPT_PRIVATE_KEY;
@@ -67,6 +67,6 @@ let checkPermissionUser = (req, res, next) => {
 }
 
 module.exports = {
-    createJWT, verifyToken, checkJwtAndCookieFromClient,
+     verifyToken, checkJwtAndCookieFromClient,
     checkPermissionUser
 }

@@ -4,12 +4,11 @@ import configViewEngine from "./config/viewEngine";
 import initWebRouters from './route/web';
 import connectDB from "./config/connectDB";
 import cookieParser from 'cookie-parser'
-import dotenv from 'dotenv'
-
+require('dotenv').config();
 let app = express();
 
 
-app.use(function (req, res, next) {
+app.use( (req, res, next)=> {
 
     res.setHeader('Access-Control-Allow-Origin', process.env.URL_REACT);
 

@@ -8,7 +8,7 @@ let checkActivityEmail = async (dataSend) => {
         port: 465,
         secure: true,
         auth: {
-            user: process.env.EMAIL_APP,
+            user: process.env.EMAIL_APP_USER,
             pass: process.env.EMAIIL_APPP_PASSWORD
 
         }

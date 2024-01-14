@@ -1,7 +1,7 @@
 import { promiseImpl } from "ejs";
 import db from "../models/index"
 import bcrypt from 'bcrypt';
-import { createJWT, verifyToken } from '../middleware/jwtAction'
+//mport { createJWT, verifyToken } from '../middleware/jwtAction'
 import dotenv from 'dotenv'
 
 let handleUserLogin = (email, password) => {
@@ -39,7 +39,7 @@ let handleUserLogin = (email, password) => {
                 userData.errMessage = `Your's email isn't exist in your system. Please try other email`
             }
 
-            let jwt = createJWT(userData.user);
+         //   let jwt = createJWT(userData.user);
             userData.Token = jwt;
             userData.ExpireIn = process.env.EXPIRE_IN;
            

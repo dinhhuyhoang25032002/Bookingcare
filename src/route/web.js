@@ -34,7 +34,7 @@ let initWebRouters = (app) => {
     router.get('/api/allcode', usercontroller.getAllCode);
 
     //, checkJwtAndCookieFromClient
-    router.get('/api/top-doctor-home',checkJwtAndCookieFromClient, doctorcontroller.getTopDoctorHome)
+    router.get('/api/top-doctor-home', doctorcontroller.getTopDoctorHome)
     router.get('/api/get-all-doctors', doctorcontroller.getAllDoctors)
     router.post('/api/save-infor-doctors', doctorcontroller.postInforDoctors)
     router.get('/api/get-infor-doctors-by-id', doctorcontroller.getInforDoctorsById)

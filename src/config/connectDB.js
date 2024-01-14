@@ -1,10 +1,17 @@
 const { Sequelize } = require('sequelize');
+require('dotenv').config();
 
 
-const sequelize = new Sequelize('icon_index', 'root', null, {
+const sequelize = new Sequelize(process.env.DB_DATABASE_NAME,
+   process.env.DB_USERNAME,
+    process.env.DB_PASSWORD, {
     host: 'localhost',
-    dialect:  'mysql',
-    "logging":false
+    dialect: process.env.DB_DIALECT,
+    "logging":false,
+    "query": {
+      "raw": true
+    },
+    "timezone": "+07:00"
 });
 
 let connectDB = async() => {
