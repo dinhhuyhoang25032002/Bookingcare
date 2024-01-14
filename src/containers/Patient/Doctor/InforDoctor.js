@@ -7,6 +7,7 @@ import { LANGUAGES } from '../../../utils';
 import DoctorSchedule from '../../../containers/Patient/Doctor/DoctorSchedule'
 import ExtraDoctorInfor from './ExtraDoctorInfor';
 import { FormattedMessage } from 'react-intl';
+import HomeAbout from '../../HomePage/Section/HomeAbout';
 class InforDoctor extends Component {
     constructor(props) {
         super(props);
@@ -47,54 +48,55 @@ class InforDoctor extends Component {
             nameEn = `${inforDoctor.positionData.valueEn}. ${inforDoctor.firstName} ${inforDoctor.lastName}`
         }
         return (
-            <div>
-                <React.Fragment>
-                    <HomeHeader
-                        isShowBanner={false}
-                    />
-                    <div className='doctor-infor-container'>
-                        <div className='doctor-introduction'>
-                            <div className='content-left'
-                                style={{ backgroundImage: `url(${inforDoctor && inforDoctor.image ? inforDoctor.image : ''})` }}
-                            >
-                            </div>
-                            <div className='content-right'>
-                                <div className='position'>
-                                    {language === LANGUAGES.VI ? nameVi : nameEn}
-                                </div>
-                                <div className='introduction'>
-                                    {inforDoctor && inforDoctor.Markdown && inforDoctor.Markdown.description && language === LANGUAGES.VI &&
-                                        <span>{inforDoctor.Markdown.description}</span>
-                                    }
-                                    {inforDoctor && inforDoctor.Markdown && inforDoctor.Markdown.description && language === LANGUAGES.EN &&
-                                        <span><FormattedMessage id={inforDoctor && inforDoctor.id ? inforDoctor.id : ''} /></span>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <div className='medical-examination-schedule'>
-                            <div className='content-left'>
-                                <DoctorSchedule
-                                    inforDoctorFromParent={this.state.currentDoctor}
-                                />
-                            </div>
-                            <div className='content-right'>
-                                <ExtraDoctorInfor
-                                    inforDoctorFromParent={this.state.currentDoctor}
-                                />
-                            </div>
-                        </div>
-                        <div className='doctor-information'>
-                            {inforDoctor && inforDoctor.Markdown && inforDoctor.Markdown.contentHTML &&
-                                <div dangerouslySetInnerHTML={{ __html: inforDoctor.Markdown.contentHTML }}></div>
-                                // <div></div>
-                            }
-                        </div>
-                        <div className='medical-examination-feedback'></div>
-                    </div>
-                </React.Fragment>
 
-            </div>
+            <>
+                <HomeHeader
+                    isShowBanner={false}
+                />
+                <div className='doctor-infor-container'>
+                    <div className='doctor-introduction'>
+                        <div className='content-left'
+                            style={{ backgroundImage: `url(${inforDoctor && inforDoctor.image ? inforDoctor.image : ''})` }}
+                        >
+                        </div>
+                        <div className='content-right'>
+                            <div className='position'>
+                                {language === LANGUAGES.VI ? nameVi : nameEn}
+                            </div>
+                            <div className='introduction'>
+                                {inforDoctor && inforDoctor.Markdown && inforDoctor.Markdown.description && language === LANGUAGES.VI &&
+                                    <span>{inforDoctor.Markdown.description}</span>
+                                }
+                                {inforDoctor && inforDoctor.Markdown && inforDoctor.Markdown.description && language === LANGUAGES.EN &&
+                                    <span><FormattedMessage id={inforDoctor && inforDoctor.id ? inforDoctor.id : ''} /></span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div className='medical-examination-schedule'>
+                        <div className='content-left'>
+                            <DoctorSchedule
+                                inforDoctorFromParent={this.state.currentDoctor}
+                            />
+                        </div>
+                        <div className='content-right'>
+                            <ExtraDoctorInfor
+                                inforDoctorFromParent={this.state.currentDoctor}
+                            />
+                        </div>
+                    </div>
+                    <div className='doctor-information'>
+                        {inforDoctor && inforDoctor.Markdown && inforDoctor.Markdown.contentHTML &&
+                            <div dangerouslySetInnerHTML={{ __html: inforDoctor.Markdown.contentHTML }}></div>
+                            // <div></div>
+                        }
+                    </div>
+                    <div className='medical-examination-feedback'></div>
+                </div>
+                <HomeAbout />
+            </>
+
+
         );
     }
 }

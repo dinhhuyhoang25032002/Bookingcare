@@ -7,9 +7,10 @@ export const path = {
     INFOR_DOCTOR: '/infor-doctor/:id',
     INFOR_SPCIALTY: '/infor-specialty/:id',
     INFOR_CLINIC: '/infor-clinic/:id',
-    CREATE_ACCOUNT:'/create-account',
+    CREATE_ACCOUNT: '/create-account',
     CONFIRM_BOOKING: '/confirm-schedule',
-    FORGOT_PASSWORD:'/forgot-password'
+    FORGOT_PASSWORD: '/forgot-password',
+    INTRODUCTION_HOMECARE: '/about-homecare'
 
 };
 

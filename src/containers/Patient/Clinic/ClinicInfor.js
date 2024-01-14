@@ -8,6 +8,7 @@ import DoctorSchedule from '../../../containers/Patient/Doctor/DoctorSchedule'
 import ExtraDoctorInfor from '../Doctor/ExtraDoctorInfor';
 import ProfileDoctor from '../Doctor/ProfileDoctor';
 import { getDoctorWithClinic } from '../../../services/userService'
+import HomeAbout from '../../HomePage/Section/HomeAbout';
 import _ from 'lodash'
 class ClinicInfor extends Component {
     constructor(props) {
@@ -109,15 +110,14 @@ class ClinicInfor extends Component {
                         </div>
                         <button onClick={() => { this.isShowDescription() }}>Xem thêm</button>
                     </div>
-
                     :
                     <div className='description-container'>
                         <div className='description-clinic-full'>
                             {inforDoctorWithClinic && !_.isEmpty(inforDoctorWithClinic)
                                 &&
                                 <>
-                                 <div className='name-clinic'>{inforDoctorWithClinic.name}</div>
-                                 <div dangerouslySetInnerHTML={{ __html: inforDoctorWithClinic.descriptionHTML }}></div>
+                                    <div className='name-clinic'>{inforDoctorWithClinic.name}</div>
+                                    <div dangerouslySetInnerHTML={{ __html: inforDoctorWithClinic.descriptionHTML }}></div>
 
                                 </>
                             }
@@ -134,7 +134,6 @@ class ClinicInfor extends Component {
                         arrDoctorSchedule.map((item, index) => {
                             return (
                                 <>
-
                                     <div className='all-doctors' key={index}>
 
                                         <div className='is-content-left'>
@@ -142,7 +141,6 @@ class ClinicInfor extends Component {
                                                 isshowLink={true}
                                                 doctorID={item}
                                                 isShowDescription={true}
-
                                             />
                                         </div>
                                         <div className='is-content-right'>
@@ -161,16 +159,11 @@ class ClinicInfor extends Component {
                                         </div>
                                     </div>
                                 </>
-
                             )
                         })
                     }
-
-
-
-
                 </div>
-
+                <HomeAbout />
             </div>
 
         )

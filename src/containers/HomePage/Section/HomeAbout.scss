@@ -1,0 +1,130 @@
+.container-home-about {
+    height        : fit-content;
+    display       : flex;
+    flex-direction: column;
+    background    : #efefef;
+    border-top    : 1px solid #dddddd;
+
+    .content-home-about {
+        display   : flex;
+        margin-top: 20px;
+        padding   : 0 45px;
+
+        .content-left {
+            width: 42%;
+
+            .collect-image {
+                display    : flex;
+                gap        : 15px;
+                width      : fit-content;
+                margin-left: 17px;
+
+                .image {
+                    background         : url('../../../assets/bo-cong-thuong.svg');
+                    width              : 99px;
+                    height             : 40px;
+                    background-position: center;
+                    background-repeat  : no-repeat;
+                    background-size    : contain;
+
+                }
+            }
+
+            .name-company {
+                padding: 10px 10px;
+            }
+
+            .collect-item {
+                display        : flex;
+                padding        : 5px 37px;
+                width          : fit-content;
+                justify-content: center;
+                align-items    : center;
+
+                .icon {
+                    font-size   : 17px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .content-center {
+            width: 16%;
+
+            .header-logo {
+                background         : url(../../../assets/logo.svg);
+                width              : 100%;
+                cursor             : pointer;
+                height             : 57px;
+                background-size    : contain;
+                background-position: left;
+                background-repeat  : no-repeat;
+                margin             : 7px 0;
+                margin-left        : 10px;
+
+            }
+
+        }
+
+        .content-right {
+            width       : 42%;
+            padding-left: 40px;
+
+            .collect-item {
+                display: flex;
+
+                .collect-text {
+                    display        : flex;
+                    flex-direction : column;
+                    justify-content: center;
+
+                }
+
+                .image {
+
+                    &.image-logo-1 {
+                        height    : 43px;
+                        width     : 64px;
+                        margin-top: 9px;
+                        background: url('../../../assets/093706-hellodoctorlogo.png');
+                    }
+
+                    &.image-logo-2 {
+                        height    : 64px;
+                        width     : 64px;
+                        background: url('../../../assets/082316-logo-bernard.png');
+                    }
+
+                    &.image-logo-3 {
+                        height    : 64px;
+                        background: url('../../../assets/064252-doctor-check-2.png');
+                        width     : 64px;
+                    }
+
+                    background-position: center;
+                    background-repeat  : no-repeat !important;
+                    background-size    : contain;
+
+                }
+            }
+
+        }
+    }
+}
+
+.text {
+    margin-left: 10px;
+    cursor     : pointer;
+
+    &.text1 {
+        color: rgb(15, 134, 134);
+    }
+
+    &.name-company {
+        font-size  : 16px;
+        font-weight: 700;
+    }
+
+    padding   : 3px;
+    font-size : 14px;
+}

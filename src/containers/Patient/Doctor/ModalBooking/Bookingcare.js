@@ -4,7 +4,7 @@ import { Modal } from 'reactstrap';
 import { FormattedMessage } from 'react-intl';
 import './Bookingcare.scss'
 import ProfileDoctor from '../ProfileDoctor';
-import { getProfileDoctorById, postPatientBookingInfor } from '../../../../../src/services/userService'
+import { getProfileDoctorById, postPatientBookingInfor } from '../../../../services/userService'
 import _ from 'lodash'
 import { NumericFormat } from 'react-number-format';
 import { LANGUAGES } from '../../../../utils';
@@ -246,7 +246,7 @@ class Bookingcare extends Component {
                                 </input>
                             </div>
                             <div className='format-item col-6 form-group'>
-                                <i className="fas fa-phone-volume"></i>
+                                <i class="fas fa-phone"></i>
                                 <input
                                     value={this.state.phoneNumber}
                                     onChange={(event) => this.handleOnchangeInputValue(event, 'phoneNumber')}

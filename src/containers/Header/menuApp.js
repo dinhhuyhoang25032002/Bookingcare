@@ -77,7 +77,11 @@ export const doctorMenu = [
         ]
     },
     {
-        name: 'menu.admin.Back-to-home', link: '/home'
+        name: 'menu.admin.Option', menus: [
+            {
+                name: 'menu.admin.Back-to-home', link: '/home'
+            }
+        ]
     }
 
 ]

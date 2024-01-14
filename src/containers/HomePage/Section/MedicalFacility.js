@@ -38,14 +38,15 @@ class MedicalFacility extends Component {
             <div className='section-share section-medical-facility'>
                 <div className='specialty-container'>
                     <div className='specialty-header'>
-                        <div className='title-specialty'><b><FormattedMessage id = 'homepage.Prominent-Healthcare-Facility'/></b></div>
-                        <button className='btn-specialty'> <FormattedMessage id ='homepage.Search-more'/></button>
+                        <div className='title-specialty'><b><FormattedMessage id='homepage.Prominent-Healthcare-Facility' /></b></div>
+                        <button className='btn-specialty'> <FormattedMessage id='homepage.Search-more' /></button>
                     </div>
                     <div className='specialty-body'>
                         <Slider {...this.props.settings}>
                             {arrDoctors && arrDoctors.length > 0
                                 && arrDoctors.map((item, index) => {
                                     return (
+
                                         <div className='section-customize' key={index}
                                             onClick={() => { this.handleViewInforClinic(item) }}
                                         >
@@ -55,6 +56,7 @@ class MedicalFacility extends Component {
                                             </div>
                                             <div className='text-title text-center'>{item.name}</div>
                                         </div>
+
                                     )
                                 })}
 

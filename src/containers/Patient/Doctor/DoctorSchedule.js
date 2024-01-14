@@ -6,7 +6,7 @@ import { LANGUAGES } from '../../../utils';
 import localization from 'moment/locale/vi';
 import { getScheduleDoctor } from '../../../services/userService'
 import { FormattedMessage } from 'react-intl';
-import Bookingcare from './Modal/Bookingcare';
+import Bookingcare from './ModalBooking/Bookingcare';
 import { times } from 'lodash';
 
 class DoctorSchedule extends Component {
@@ -26,7 +26,7 @@ class DoctorSchedule extends Component {
             let allDays = this.getAllDays(language)
             //   console.log('hoang check allDay: ', allDays)
             let idDoctorCurrent = this.props.inforDoctorFromParent
-        //    console.log('hoang check data: ', idDoctorCurrent)
+            //    console.log('hoang check data: ', idDoctorCurrent)
             if (this.props.inforDoctorFromParent && this.props.inforDoctorFromParent > 0) {
                 let response = await getScheduleDoctor(idDoctorCurrent, allDays[0].value);
                 this.setState({
@@ -41,7 +41,7 @@ class DoctorSchedule extends Component {
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
-           
+
     }
     capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);

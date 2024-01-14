@@ -10,7 +10,7 @@ class AboutVideo extends Component {
             <div className='section-share section-about-video'>
                 <div className='specialty-container'>
                     <div className='specialty-header'>
-                        <div className='title-specialty'><b>Truyền thông nói gì về BookingCare</b></div>
+                        <div className='title-specialty'><b>Truyền thông nói gì về HomeCare</b></div>
                     </div>
                     <div className='specialty-body section-about-video'>
                         <div className='content-left'>
@@ -25,13 +25,13 @@ class AboutVideo extends Component {
                         </div>
                         <div className='content-right'>
                             <div className='section-customize'>
-                               <a target='_blank' rel="noreferrer" href='https://video.vnexpress.net/cuoc-song-4-0/kham-benh-khong-phai-xep-hang-o-ha-noi-3797126.html'>
-                               <div className='bg-image section-about-video image1'></div>
-                               </a>
+                                <a target='_blank' rel="noreferrer" href='https://video.vnexpress.net/cuoc-song-4-0/kham-benh-khong-phai-xep-hang-o-ha-noi-3797126.html'>
+                                    <div className='bg-image section-about-video image1'></div>
+                                </a>
 
                             </div>
                             <div className='section-customize'>
-                                <a target='_blank'  rel="noreferrer" href='https://vtc.vn/dat-kham-chuyen-khoa-va-hanh-trinh-ho-tro-cac-benh-vien-qua-tai-ar434101.html'>
+                                <a target='_blank' rel="noreferrer" href='https://vtc.vn/dat-kham-chuyen-khoa-va-hanh-trinh-ho-tro-cac-benh-vien-qua-tai-ar434101.html'>
                                     <div className='bg-image section-about-video image2'></div>
                                 </a>
 

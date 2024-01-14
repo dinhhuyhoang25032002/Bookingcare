@@ -8,6 +8,7 @@ import DoctorSchedule from '../../../containers/Patient/Doctor/DoctorSchedule'
 import ExtraDoctorInfor from '../Doctor/ExtraDoctorInfor';
 import ProfileDoctor from '../Doctor/ProfileDoctor';
 import { getDoctorWithSpecialty, getAllCodeService } from '../../../services/userService'
+import HomeAbout from '../../HomePage/Section/HomeAbout';
 import _ from 'lodash'
 class SpecialtyInfor extends Component {
     constructor(props) {
@@ -142,7 +143,7 @@ class SpecialtyInfor extends Component {
                     <div className='description-container'>
                         <div className='description-specialty-full'>
                             {inforDoctorWithSpecialty && !_.isEmpty(inforDoctorWithSpecialty)
-                                && 
+                                &&
                                 <div dangerouslySetInnerHTML={{ __html: inforDoctorWithSpecialty[0].descriptionHTML }}></div>
                             }
                         </div>
@@ -206,11 +207,8 @@ class SpecialtyInfor extends Component {
                         })
                     }
 
-
-
-
                 </div>
-
+                <HomeAbout />
             </div>
 
         )

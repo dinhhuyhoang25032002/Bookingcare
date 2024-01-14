@@ -19,6 +19,8 @@ import SpecialtyInfor from '../containers/Patient/Specialty/SpecialtyInfor'
 import ClinicInfor from '../containers/Patient/Clinic/ClinicInfor.js'
 import CreateAccount from '../containers/Auth/CreateAccount.js'
 import ForgotPassword from './Auth/ForgotPassword.js'
+import Introduction from '../containers/HomePage/Extention/Introduction.js'
+
 class App extends Component {
 
     handlePersistorState = () => {
@@ -58,7 +60,7 @@ class App extends Component {
                                     <Route path={'/doctor/'} component={userIsAuthenticated(Doctor)} />
                                     <Route path={path.CONFIRM_BOOKING} component={confirmBooking} />
                                     <Route path={path.FORGOT_PASSWORD} component={ForgotPassword} />
-
+                                    <Route path={path.INTRODUCTION_HOMECARE} component={Introduction} />
                                 </Switch>
                             </CustomScrollbars>
                         </div>

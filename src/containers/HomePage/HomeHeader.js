@@ -6,7 +6,7 @@ import { LANGUAGES } from '../../utils/constant'
 import { changeLanguageApp } from '../../store/actions/appActions'
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import MenuApp from './MenuApp';
+import MenuApp from './Extention/MenuApp';
 class HomeHeader extends Component {
 
     constructor(props) {
@@ -21,7 +21,7 @@ class HomeHeader extends Component {
     }
 
     returnToHome = () => {
-      //  let isLoggedIn = this.props
+        //  let isLoggedIn = this.props
         if (this.props.history) {
             this.props.history.push(`/home`)
         }
@@ -32,17 +32,30 @@ class HomeHeader extends Component {
         })
     }
     render() {
-        let language = this.props.language    
+        let language = this.props.language
         let isShow = this.state.isShow
         return (
             <React.Fragment>
                 <div className='home-header-container'>
-                    
+
+                    {isShow === true ?
+                        <>
+                            <div className='over-dark'
+                                onClick={() => { this.showMenuApp() }}
+                            >
+                            </div>
+                        </>
+                        : <></>
+
+                    }
                     <div className='home-header-content'>
                         <div className='left-content'>
                             <div className='left-content-up'>
+                                <div className='center-i'>
                                 <i className="fas fa-bars"
                                     onClick={() => { this.showMenuApp() }} ></i>
+                                </div>
+                               
 
                                 <div className='header-logo'
                                     onClick={() => { this.returnToHome() }}
@@ -53,16 +66,16 @@ class HomeHeader extends Component {
                             {isShow === true ?
                                 <>
                                     <MenuApp />
-
                                 </>
                                 : <></>
+
                             }
                         </div>
                         <div className='center-content'>
-                            <NavLink to='/' className='child-content'>
+                            <div to='/' className='child-content'>
                                 <span><b><FormattedMessage id="homeheader.speciality" /> </b></span>
                                 <span className='subs-title'><FormattedMessage id="homeheader.searchdoctor" /></span>
-                            </NavLink>
+                            </div>
                             <div className='child-content'>
                                 <div><b><FormattedMessage id="homeheader.health-facility" /></b></div>
                                 <div className='subs-title'><FormattedMessage id="homeheader.select-room" /></div>
@@ -91,7 +104,8 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </div>
-                {this.props.isShowBanner === true &&
+                {
+                    this.props.isShowBanner === true &&
                     <div className='home-header-banner'>
                         <div className='content-up'>
 
@@ -147,7 +161,7 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 }
-            </React.Fragment>
+            </React.Fragment >
         );
     }
 
