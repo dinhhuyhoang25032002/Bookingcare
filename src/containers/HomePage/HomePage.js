@@ -10,9 +10,22 @@ import ProminentDoctor from './Section/ProminentDoctor'
 import HandBook from './Section/HandBook'
 import AboutVideo from './Section/AboutVideo'
 import HomeAbout from './Section/HomeAbout'
+
+
 class HomePage extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+          
+        }
+    }
+
+
+  
+
     render() {
+       
         // console.log('hoang check state home page: ',this.state)
         let settings = {
             dots: true,
@@ -24,7 +37,10 @@ class HomePage extends Component {
         };
         return (
             <div>
-                <HomeHeader isShowBanner={true} />
+                
+                <HomeHeader isShowBanner={true}
+                   
+                />
                 <Specialty
                     settings={settings}
                 />

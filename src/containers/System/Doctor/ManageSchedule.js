@@ -27,8 +27,17 @@ class ManageSchedule extends Component {
         this.props.fetchAllScheduleTime()
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
+
+        if (prevProps.language !== this.props.language) {
+            let dataSelect = this.buildDataInputSelect(this.props.allDoctors)
+            //  console.log('check dataSelect: ', dataSelect)
+            this.setState({
+                listDoctor: dataSelect,
+            })
+        }
         if (prevProps.allDoctors !== this.props.allDoctors) {
             let dataSelect = this.buildDataInputSelect(this.props.allDoctors)
+            //  console.log('check dataSelect: ', dataSelect)
             this.setState({
                 listDoctor: dataSelect,
             })
@@ -40,7 +49,7 @@ class ManageSchedule extends Component {
             if (data && data.length > 0) {
                 data = data.map(item => ({ ...item, isSelected: false }))
             }
-
+            //   console.log('check data time: ', data)
             this.setState({
                 rangeTime: data
             })
@@ -55,6 +64,7 @@ class ManageSchedule extends Component {
     }
 
     buildDataInputSelect = (inputData) => {
+        console.log('check input:', inputData)
         let result = [];
         let language = this.props.language
         if (inputData && inputData.length > 0) {
@@ -88,10 +98,11 @@ class ManageSchedule extends Component {
     }
 
     handleOnclickBtnTime = (time) => {
+        //    console.log("check time selected:", time)
         let { rangeTime } = this.state;
         if (rangeTime && rangeTime.length > 0) {
             rangeTime = rangeTime.map(item => {
-                if (item.id === time.id) item.isSelected = !item.isSelected;
+                if (time.id === item.id) item.isSelected = !item.isSelected;
                 return item;
             })
             this.setState({
@@ -102,7 +113,7 @@ class ManageSchedule extends Component {
 
     handleSaveSchedule = async () => {
         let { rangeTime, selectedDoctor, currentDate } = this.state;
-      //  console.log('check date: ', currentDate)
+        //  console.log('check date: ', currentDate)
         let result = [];
         if (!currentDate) {
             toast.error('Invalid date!');
@@ -123,7 +134,7 @@ class ManageSchedule extends Component {
                 selectedTime.map(item => {
                     let object = {}
                     object.doctorID = selectedDoctor.value;
-                    object.date =  formatDate;
+                    object.date = formatDate;
                     object.timeType = item.keyMap;
                     // object.maxNumber = 10
 
@@ -140,9 +151,9 @@ class ManageSchedule extends Component {
             formatDate: formatDate
 
         })
-        if( response && response.errCode === 0){
+        if (response && response.errCode === 0) {
             toast.success('Save Schedule Successed !');
-        }else{
+        } else {
             toast.error('Save Schedule Failed !');
             console.log('hoang check response >> errCode: ', response)
 
@@ -151,11 +162,12 @@ class ManageSchedule extends Component {
 
     render() {
 
-        let rangeTime = this.state.rangeTime;
-        let { language } = this.props;
-        let yesterday = new Date(new Date().setDate(new Date().getDate()-1));
-
-        //console.log('hoang check state: ', rangeTime)
+        let { rangeTime, currentDate } = this.state;
+        let { language, userInfo } = this.props;
+        let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+        // let formatDate = new Date(currentDate).getTime()
+        // console.log('check formatDate: ', userInfo);
+        // console.log('hoang check state: ', rangeTime, yesterday)
         return (
             <div className='manage-schedule-container'>
                 <div className='manage-schedule-content'>
@@ -164,14 +176,21 @@ class ManageSchedule extends Component {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-6 form-group'>
-                            <label>
-                                <FormattedMessage id="manage-schedule.choose-doctor" />
-                            </label>
-                            <Select
+                            {
+                                userInfo.roleID === "R1" ? <label><FormattedMessage id="manage-schedule.choose-doctor" /></label>
+                                    : <label>
+                                        <FormattedMessage id="manage-schedule.fullname-doctor" />
+                                    </label>
+                            }
+                            {userInfo.roleID === "R1" ? <Select
                                 value={this.state.selectedDoctor}
                                 onChange={this.handleChangeSelect}
                                 options={this.state.listDoctor}
-                            />
+                            /> : <input
+                                className='form-control'
+                                value={language === 'vi' ? `${userInfo.firstName} ${userInfo.lastName}` : `${userInfo.lastName} ${userInfo.firstName}`}
+                            >
+                            </input>}
                         </div>
                         <div className='col-6 form-group'>
                             <label>
@@ -219,6 +238,7 @@ const mapStateToProps = state => {
         allDoctors: state.admin.allDoctors,
         language: state.app.language,
         allTimeSchedule: state.admin.allTimeSchedule,
+        userInfo: state.user.userInfo
     };
 };
 

@@ -114,7 +114,10 @@ class DoctorSchedule extends Component {
 
     render() {
         let { allDays, allValueTime, isShowModalSchesule, dataDoctorSchedule } = this.state;
-        // console.log('check asdaj: ', this.state)
+        if(allDays && allDays.length>0){
+            console.log('check asdaj: ', allDays[0].value)
+        }
+        
         let { language } = this.props;
         return (
             <>
@@ -174,6 +177,8 @@ class DoctorSchedule extends Component {
                     dataDoctorSchedule={dataDoctorSchedule}
                     closeModalDoctorSchedule={this.closeModalDoctorSchedule}
                     doctorID={this.props.inforDoctorFromParent}
+                    
+
                 />
             </>
 

@@ -13,16 +13,16 @@
     
         .manage-schedule-times{
             display: flex;
+            grid-gap: 10px;
             gap: 10px;
-            width: 620px;
-            height: 130px;
+            width: 729px;
+            height: 91px;
             flex-wrap: wrap;
-         //   border: 1px solid red;
-            margin:  15px auto;
+            margin: 38px auto;
 
             
                .btn-schedule-doctor{
-                height: 36px ;
+                height: 40px ;
                 background: #fff8ae;
                 width: 166px;
                 text-align: center ;

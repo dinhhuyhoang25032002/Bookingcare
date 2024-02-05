@@ -2,100 +2,116 @@
     border-radius: 3px;
 
     .bookingcare-content {
-        height        : 100%;
-        display       : flex;
+        height: 100%;
+        display: flex;
         flex-direction: column;
 
         .bookingcare-header {
-            padding        : 10px 15px;
-            padding-bottom : 0px;
-            display        : flex;
+            padding: 10px 15px;
+            padding-bottom: 0px;
+            display: flex;
             justify-content: space-between;
-            align-items    : center;
+            align-items: center;
 
             .logo-image {
-                width              : 159px;
-                height             : 51px;
-                background-image   : url(../../../../assets/logo.svg);
+                width: 159px;
+                height: 51px;
+                background-image: url(../../../../assets/logo.svg);
                 background-position: center;
-                background-repeat  : no-repeat;
-                background-size    : cover;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
 
             //  height         : 10%;
             // border         : 1px solid red;
 
+            .button-close-modal {
+                .btn-close-modal {
+                    border: 1px solid transparent;
+                    outline: none;
+                    font-weight: 300;
+                    background: none;
+                    padding: 4px 7px 0px 7px;
 
-            i {
-                cursor   : pointer;
-                font-size: 20px;
-                color    : rgb(41, 39, 39);
+                    &:hover {
+                        background: rgb(245, 242, 242);
+                        border-radius: 6px;
+                    }
+
+                    i {
+                        font-size: 18px;
+
+
+
+                    }
+                }
+
             }
 
         }
 
         .bookingcare-body {
-            height           : 100%;
+            height: 100%;
             //  border    : 1px solid green;
-            padding-left     : 20px;
-            padding-right    : 10px;
+            padding-left: 20px;
+            padding-right: 10px;
             // width         : 100%;
 
             h3 {
                 text-transform: capitalize;
-                font-weight   : 600;
-                margin-bottom : 0px;
-                text-align    : center;
+                font-weight: 600;
+                margin-bottom: 0px;
+                text-align: center;
 
             }
 
             .row {
-                display        : flex;
+                display: flex;
                 justify-content: space-between;
 
                 .format-instance {
-                    display       : flex;
+                    display: flex;
                     flex-direction: column;
-                    margin-bottom : 25px;
+                    margin-bottom: 25px;
 
                     .format-payment {
                         label {
-                            color      : #45c3d2;
+                            color: #45c3d2;
                             font-weight: 600;
-                            margin     : 5px 0px 0px 0px;
+                            margin: 5px 0px 0px 0px;
                         }
 
                         .container {
-                            width            : 309px;
-                            display          : flex;
+                            width: 309px;
+                            display: flex;
                             //flex-direction : column;
-                            justify-content  : left;
-                            align-items      : center;
-                            padding          : 0px 0px;
-                            margin           : 0px;
+                            justify-content: left;
+                            align-items: center;
+                            padding: 0px 0px;
+                            margin: 0px;
 
                             .checkmark {
                                 margin: 0px 4px;
 
                                 span {
-                                    color          : #2aa0b3;
+                                    color: #2aa0b3;
                                     text-decoration: underline;
                                 }
 
                             }
 
                             .input-select {
-                                display                  : grid;
-                                place-content            : center;
-                                width                    : 13px;
-                                height                   : 13px;
+                                display: grid;
+                                place-content: center;
+                                width: 13px;
+                                height: 13px;
                                 //border-radius        : 50%;
-                                vertical-align           : middle;
-                                border                   : 1px solid black;
+                                vertical-align: middle;
+                                border: 1px solid black;
                                 //appearance             : none;
                                 // -webkit-appearance: inherit;
-                                outline                  : none;
-                                cursor                   : pointer;
+                                outline: none;
+                                cursor: pointer;
 
                             }
                         }
@@ -106,14 +122,14 @@
                 }
 
                 .format-item {
-                    display        : flex;
+                    display: flex;
                     justify-content: center;
-                    align-items    : center;
+                    align-items: center;
 
                     input {
-                        padding-left    : 30px;
+                        padding-left: 30px;
                         //text-transform: capitalize;
-                        margin-left     : 1%;
+                        margin-left: 1%;
                     }
 
                     .uptext {
@@ -121,10 +137,10 @@
                     }
 
                     i {
-                        margin-right     : -24px;
-                        z-index          : 2;
+                        margin-right: -24px;
+                        z-index: 2;
                         // font-size     : 17px;
-                        padding-bottom   : 5px;
+                        padding-bottom: 5px;
                     }
 
                     .fa-phone-volume {
@@ -149,21 +165,21 @@
                 }
 
                 .reson-examination {
-                    display            : flex;
-                    justify-content    : center;
+                    display: flex;
+                    justify-content: center;
                     //  align-items    : center;
 
                     input {
-                        padding-left     : 30px;
-                        padding-bottom   : 57px;
+                        padding-left: 30px;
+                        padding-bottom: 57px;
                         // text-transform: capitalize;
-                        height           : 80px;
+                        height: 80px;
                     }
 
                     i {
                         margin-right: -24px;
-                        z-index     : 2;
-                        margin-top  : 17px;
+                        z-index: 2;
+                        margin-top: 17px;
                     }
                 }
 
@@ -175,24 +191,24 @@
                 }
 
                 .gender {
-                    display        : flex;
+                    display: flex;
                     justify-content: left;
-                    align-items    : center;
-                    gap            : 10px;
+                    align-items: center;
+                    gap: 10px;
 
                     &.private-insurance {
-                        display       : flex;
-                        flex-wrap     : wrap;
+                        display: flex;
+                        flex-wrap: wrap;
                         flex-direction: column;
 
                         .container-insurance {
-                            width            : 100%;
-                            display          : flex;
+                            width: 100%;
+                            display: flex;
                             // flex-direction: column;
-                            justify-content  : left;
-                            align-items      : center;
-                            padding          : 0px 0px;
-                            margin           : 0px;
+                            justify-content: left;
+                            align-items: center;
+                            padding: 0px 0px;
+                            margin: 0px;
 
                             .checkmark {
                                 margin-left: 4px;
@@ -201,22 +217,22 @@
                     }
 
                     .date-birth {
-                        width        : 227px;
-                        border       : 1px solid #ced4da;
-                        padding      : 5.25px 0px;
-                        margin       : 9.8px 0;
+                        width: 227px;
+                        border: 1px solid #ced4da;
+                        padding: 5.25px 0px;
+                        margin: 9.8px 0;
                         border-radius: 4px;
-                        margin-left  : 10px;
-                        padding-left : 10px;
+                        margin-left: 10px;
+                        padding-left: 10px;
                     }
 
                     .container {
-                        width          : 100%;
-                        display        : flex;
+                        width: 100%;
+                        display: flex;
                         justify-content: left;
-                        align-items    : center;
-                        padding        : 0px 0px;
-                        margin         : 0px;
+                        align-items: center;
+                        padding: 0px 0px;
+                        margin: 0px;
 
                         &.dateofbirth {
                             width: 60px;
@@ -261,22 +277,22 @@
             .button-submit {
                 //margin-bottom: 10px;
 
-                background    : #ffc419;
-                width         : 100%;
-                padding       : 10px 15px;
-                font-weight   : 600;
-                font-size     : 16px;
-                border        : 2px solid transparent;
-                outline       : none;
-                cursor        : pointer;
-                color         : #ffff;
-                border-radius : 4px;
+                background: #ffc419;
+                width: 100%;
+                padding: 10px 15px;
+                font-weight: 600;
+                font-size: 16px;
+                border: 2px solid transparent;
+                outline: none;
+                cursor: pointer;
+                color: #ffff;
+                border-radius: 4px;
                 text-transform: uppercase;
                 // opacity: 0.7;
 
                 &:hover {
                     background: #83d2eb;
-                    border    : 2px solid rgb(76, 188, 240);
+                    border: 2px solid rgb(76, 188, 240);
                 }
 
             }

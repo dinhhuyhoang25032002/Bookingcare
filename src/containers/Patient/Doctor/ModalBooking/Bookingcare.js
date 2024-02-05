@@ -37,7 +37,8 @@ class Bookingcare extends Component {
             email: '',
             doctorID: '',
             timeType: '',
-            doctorName: ''
+            //  doctorName: ''
+            // dateBooking:''
         }
     }
     async componentDidMount() {
@@ -89,9 +90,16 @@ class Bookingcare extends Component {
 
 
     handleOnchangDatePicker = (date) => {
-        this.setState({
-            dateOfBirth: date[0],
-        })
+
+        if (!date) {
+            this.setState({
+                dateOfBirth: '',
+            })
+        } else {
+            this.setState({
+                dateOfBirth: date[0],
+            })
+        }
     }
 
     capitalizeFirstLetter = (string) => {
@@ -137,13 +145,18 @@ class Bookingcare extends Component {
         let date = new Date(this.state.dateOfBirth).getTime();
         // console.log('check data time: ', this.state, date);
         let { language } = this.props;
-        let dataTime = this.builDataTime(this.props.dataDoctorSchedule)
-        let doctorName = this.builDoctorNameBooking(this.props.dataDoctorSchedule)
+        let dataTime = this.builDataTime(this.props.dataDoctorSchedule);
+        let doctorName = this.builDoctorNameBooking(this.props.dataDoctorSchedule);
+        let dateBooking = this.props.dataDoctorSchedule.date;
+
+
+        console.log('check data name doctor: ', doctorName)
         //  toast.error('Medical examination appointment failed'
         let response = await postPatientBookingInfor({
             fullNamePatient: this.state.fullNamePatient,
             phoneNumber: this.state.phoneNumber,
             dateOfBirth: date,
+            dateBooking: dateBooking,
             address: this.state.address,
             gender: this.state.gender,
             bookingMethod: this.state.bookingMethod,
@@ -176,11 +189,11 @@ class Bookingcare extends Component {
                 support: '',
                 //  payment: true,
                 email: '',
-                doctorID: '',
-                timeType: '',
+                doctorID: this.state.doctorID,
+                timeType: this.state.timeType
             })
         } else {
-            let date = new Date(this.state.dateOfBirth).getTime();
+            //  let date = new Date(this.state.dateOfBirth).getTime();
             this.setState({
                 fullNamePatient: this.state.fullNamePatient,
                 phoneNumber: this.state.phoneNumber,
@@ -189,7 +202,7 @@ class Bookingcare extends Component {
                 gender: this.state.gender,
                 bookingMethod: this.state.bookingMethod,
                 reson: this.state.reson,
-                support: this.state.support,
+                // support: this.state.support,
                 email: this.state.email,
                 doctorID: this.state.doctorID,
                 timeType: this.state.timeType
@@ -200,17 +213,14 @@ class Bookingcare extends Component {
             }
 
         }
-
-
-
     }
 
     render() {
         let { dataProfile, doctorID } = this.state;
         let { isshowModal, closeModalDoctorSchedule, language, dataDoctorSchedule } = this.props;
         // console.log('ddasdjfjsdh: ', dataProfile)
-        // console.log('check data time: ', dataDoctorSchedule);
-
+        console.log('check data time: ', dataDoctorSchedule);
+        // console.log('check all state: ', this.state)
         return (
             <Modal
                 isOpen={isshowModal}
@@ -222,9 +232,12 @@ class Bookingcare extends Component {
                 <div className='bookingcare-content'>
                     <div className='bookingcare-header'>
                         <div className='logo-image'></div>
-                        <i className="fas fa-times"
-                            onClick={closeModalDoctorSchedule}
-                        ></i>
+                        <div className='button-close-modal'>
+                            <button className='btn-close-modal'
+                                onClick={closeModalDoctorSchedule}>
+                                <i className="fas fa-times"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <div className='bookingcare-body'>
@@ -246,7 +259,7 @@ class Bookingcare extends Component {
                                 </input>
                             </div>
                             <div className='format-item col-6 form-group'>
-                                <i class="fas fa-phone"></i>
+                                <i className="fas fa-phone"></i>
                                 <input
                                     value={this.state.phoneNumber}
                                     onChange={(event) => this.handleOnchangeInputValue(event, 'phoneNumber')}
@@ -254,7 +267,7 @@ class Bookingcare extends Component {
                                     className='form-control uptext' />
                             </div>
                             <div className='format-item col-6 form-group'>
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <i className="fa fa-envelope" aria-hidden="true"></i>
                                 <input
                                     value={this.state.email}
                                     onChange={(event) => { this.handleOnchangeInputValue(event, 'email') }}
@@ -336,7 +349,7 @@ class Bookingcare extends Component {
                                 </div>
                                 <div className='format-payment col-6 form-group'>
                                     <label><FormattedMessage id="patient.modal-booking.payment-method" /></label>
-                                    <div class="container">
+                                    <div className="container">
                                         <input className='input-select' type="radio"
 
                                             onChange={(event) => this.handleOnchangeInputValue(event, 'payment')}

@@ -48,7 +48,8 @@
             "handbook": "Cẩm nang",
             "manage-handbook": "Quản lí cẩm nang",
             "Back-to-home": "Quay lại trang chủ",
-            "Option": "Lựa chọn khác"
+            "Option": "Lựa chọn khác",
+            "Change-password":"Đổi mật khẩu"
         },
         "doctor": {
             "manage-schedule": "Quản lí kế hoạch khám bệnh",
@@ -83,7 +84,8 @@
     },
     "manage-schedule": {
         "title": "Quản lí lịch khám bệnh của bác sĩ",
-        "choose-doctor": "Chọn bác sĩ",
+        "choose-doctor": "Chọn một bác sĩ",
+        "fullname-doctor":"Họ và tên bác sĩ",
         "choose-date": "Chọn ngày khám bệnh",
         "save-button": "Lưu"
     },

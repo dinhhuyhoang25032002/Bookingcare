@@ -8,7 +8,7 @@ import './Navigator.scss';
 class MenuGroup extends Component {
 
     render() {
-        const { name, children } = this.props;
+        const { name, children} = this.props;
         return (
             <li className="menu-group">
                 <div className="menu-group-name">

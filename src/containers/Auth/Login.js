@@ -73,9 +73,9 @@ class Login extends Component {
     }
 
     handleKeyDown = (event) => {
-        //  console.log('check event: ', event)
+         console.log('check event: ', event)
         if (event.key === 'Enter' || event.keyCode === 13) {
-            this.handleLogin()
+           this.handleLogin()
         }
     }
 
@@ -84,11 +84,11 @@ class Login extends Component {
             this.props.history.push(`/create-account`)
         }
     }
-    handleForgotPassWord =()=>{
-        if (this.props.history) {
-            this.props.history.push(`/forgot-password`)
-        }
-    }
+    // handleForgotPassWord =()=>{
+    //     if (this.props.history) {
+    //         this.props.history.push(`/forgot-password`)
+    //     }
+    // }
     render() {
         return (
             <div className='login-backgroud'>
@@ -102,7 +102,7 @@ class Login extends Component {
                             <label>UserName</label>
                             <input type='text' className='form-control' placeholder='Email' value={this.state.username}
                                 onChange={(event) => this.handleOnChangeUser(event)}
-                                onKeyDown={(event) => { this.handleKeyDown(event) }}
+                            onKeyDown={(event) => { this.handleKeyDown(event) }}
                             />
                         </div>
                         <div className='col-12 form-group login-input'>
@@ -136,11 +136,11 @@ class Login extends Component {
                             >
                                 Create a account
                             </span>
-                            <span className='forgot-password'
-                            onClick={()=>{this.handleForgotPassWord()}}
+                            {/* <span className='forgot-password'
+                            // onClick={()=>{this.handleForgotPassWord()}}
                             >
                                 Forgot your password?
-                            </span>
+                            </span> */}
                         </div>
 
                     </div>

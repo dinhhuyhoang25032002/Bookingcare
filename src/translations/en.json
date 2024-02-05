@@ -47,13 +47,14 @@
             "manage-specialty": "Manage Specialty",
             "handbook": "Handbook",
             "manage-handbook": "Manage Handbook",
-            "Back-to-home":"Back to home",
-            "Option":"Option"
+            "Back-to-home": "Back to home",
+            "Option": "Options",
+            "Change-password":"Change Your Password"
         },
         "doctor": {
             "manage-schedule": "Manage Doctor's Schedule",
             "schedule": "Schedule",
-            "manage-patient":"Manage Patients"
+            "manage-patient": "Manage Patients"
         }
     },
     "manage-user": {
@@ -84,6 +85,7 @@
     "manage-schedule": {
         "title": "Managing the doctor's medical examination schedule",
         "choose-doctor": "Choose A Doctor",
+        "fullname-doctor": "Doctor's FullName",
         "choose-date": "Choose A Medical Appointment Date",
         "save-button": "Save"
     },

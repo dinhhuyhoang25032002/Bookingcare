@@ -1,10 +1,93 @@
-.manage-patient-title {
-    font-size     : 20px;
-    color         : rgb(54, 54, 241);
-    text-transform: uppercase;
-    margin        : 15px 0px;
+.container-list-patient {
+    .body-list-patient {
+        padding: 20px;
+
+        .manage-patient-title {
+            font-size: 20px;
+            color: rgb(54, 54, 241);
+            text-transform: uppercase;
+            margin: 15px 0px;
+        }
+
+        .manage-patient-content {
+            .table-warning {
+                .collect-item {
+                    display: flex;
+                    gap: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    //  width: 270.8px;
+                    //  border: 2px solid black;
+
+                    .logo-phone {
+                        background: url('../../../assets/phone.png');
+
+                        &:hover {
+                            border: 3px solid transparent;
+                            border-radius: 8px;
+                        }
+
+
+                    }
+
+                    .logo-email {
+                        background: url('../../../assets/gmail.png');
+
+                        &:hover {
+                            border: 3px solid transparent;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+
+                .collect-button {
+                    //  display: flex;
+
+                    //  padding: 0px;
+                    button {
+                        margin-left: 15px;
+
+                    }
+                }
+            }
+
+        }
+    }
 }
 
-.manage-patient-body {
-    padding: 0 20px;
+
+
+
+//     }
+
+// }
+
+.image {
+    &.logo-email {
+        height: 35px;
+        width: 35px;
+    }
+
+    border: none;
+    outline: none;
+
+    &.logo-phone {
+        height: 35px;
+        width: 35px;
+    }
+
+    &.active {
+        border: 3px solid rgb(191, 191, 252);
+        border-radius: 10px;
+    }
+
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+
+
+}
+
+.width-size {
+    width: 220px !important;
 }

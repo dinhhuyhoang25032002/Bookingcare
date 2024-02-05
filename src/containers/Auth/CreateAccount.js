@@ -4,6 +4,7 @@ import { LANGUAGES } from '../../utils';
 import { FormattedMessage } from 'react-intl';
 import './CreateAccount.scss'
 import { withRouter } from 'react-router';
+
 class CreateAccount extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +30,7 @@ class CreateAccount extends Component {
 
     render() {
 
-        let { language } = this.props;
+      //  let { language } = this.props;
         console.log("hoang check state: ", this.state)
         return (
             <div className='backgroup-sign-up'>
@@ -109,6 +110,7 @@ class CreateAccount extends Component {
                                 >Sign Up</button>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div >

@@ -242,7 +242,7 @@ class UserRedux extends Component {
                             </div>
                             <div className='col-3'>
                                 <label ><FormattedMessage id='manage-user.gender' /></label>
-                                <select class="form-select"
+                                <select className="form-select"
                                     onChange={(event) => { this.handleOnChangeInput(event, 'gender') }}
                                     value={gender}>
                                     {genders && genders.length > 0 && genders.map((item, index) => {
@@ -255,7 +255,7 @@ class UserRedux extends Component {
                             </div>
                             <div className='col-3'>
                                 <label><FormattedMessage id='manage-user.role' /></label>
-                                <select class="form-select"
+                                <select className="form-select"
                                     onChange={(event) => { this.handleOnChangeInput(event, 'role') }}
                                     value={role}>
                                     {roles && roles.length > 0 && roles.map((item, index) => {
@@ -286,7 +286,7 @@ class UserRedux extends Component {
                             </div>
                             <div className='col-3'>
                                 <label><FormattedMessage id='manage-user.position' /></label>
-                                <select class="form-select"
+                                <select className="form-select"
                                     onChange={(event) => { this.handleOnChangeInput(event, 'position') }}
                                     value={position}>
                                     {positions && positions.length && positions.map((item, index) => {

@@ -105,10 +105,10 @@ class ManageClinic extends Component {
                             onChange={(event) => { this.handleOnchangeInput(event, 'address') }}
                         ></input>
                     </div>
-                    <div class="col-6 specialty-image form-group mb-4">
+                    <div className="col-6 specialty-image form-group mb-4">
                         <label className='mb-2'>Clinic's Image</label>
                         <div className='update-avatar'>
-                            <input id='update-image' class="form-control" type="file" hidden
+                            <input id='update-image' className="form-control" type="file" hidden
                                 onChange={(event) => { this.handleUpdateImage(event) }}
                             />
                             <label className='label-update' htmlFor="update-image"> Tải ảnh <i className="fas fa-upload"></i></label>

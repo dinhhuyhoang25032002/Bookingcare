@@ -9,8 +9,9 @@ export const path = {
     INFOR_CLINIC: '/infor-clinic/:id',
     CREATE_ACCOUNT: '/create-account',
     CONFIRM_BOOKING: '/confirm-schedule',
-    FORGOT_PASSWORD: '/forgot-password',
-    INTRODUCTION_HOMECARE: '/about-homecare'
+    CHANGE_PASSWORD: '/system/change-password',
+    INTRODUCTION_HOMECARE: '/about-homecare',
+    DOCTOR_SYSTEM:'/doctor/'
 
 };
 

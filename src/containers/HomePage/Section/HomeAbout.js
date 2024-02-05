@@ -15,7 +15,7 @@ class HomeAbout extends Component {
                 <div className='content-home-about'>
                     <div className='content-left'>
                         <div className='name-company text'>
-                            Công ty Cổ phần Công nghệ BookingCare
+                            Công ty Cổ phần Công nghệ HomeCare
                         </div>
                         <div className='collect-item'>
                             <div className='icon'>
@@ -54,7 +54,7 @@ class HomeAbout extends Component {
                                 <i className="fab fa-facebook-square"></i>
                             </div>
                             <div className='text'>
-                                <a target='_.black' rel="noreferrer" href='https://www.facebook.com/profile.php?id=61555318416572'>Đặt lịch khám bệnh Homecare</a>
+                                <a target='_.blank' rel="noreferrer" href='https://www.facebook.com/profile.php?id=61555318416572'>Đặt lịch khám bệnh Homecare</a>
                             </div>
                         </div>
                         <div className='name-company text'>
@@ -100,7 +100,9 @@ class HomeAbout extends Component {
                         <div className='text text1'>
                             Câu hỏi thường gặp
                         </div>
+                        <div className='image-download'>
 
+                        </div>
                     </div>
                     <div className='content-right'>
                         <div className='collect-item'>
@@ -140,16 +142,31 @@ class HomeAbout extends Component {
                                 <div className='text'>
                                     Bảo trợ chuyên mục nội dung "sức khỏe tổng quát"
                                 </div>
+
+
                             </div>
                         </div>
+
                     </div>
                 </div>
-                <div className='section-home-about'>
-                    <p><b>&copy; 2024</b>     Contact or Review HomeCare's Services.
-                        <a target="_blank" rel="noreferrer" href='https://bookingcare.vn/'> __click here__
-                        </a>
-                    </p>
 
+                <div className='section-cright'>
+                    <div className='section-home-about'>
+                        <div><b>&copy; 2024</b>     Contact or Review HomeCare's Services.
+
+                        </div>
+                    </div>
+                    <div className='collect-item'>
+                        <div className='facebook-logo'>
+
+                        </div>
+                        <div className='tiktok-logo'>
+
+                        </div>
+                        <div className='instagram-logo'>
+
+                        </div>
+                    </div>
                 </div>
 
             </div >

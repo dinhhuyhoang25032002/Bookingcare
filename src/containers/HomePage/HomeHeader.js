@@ -25,37 +25,33 @@ class HomeHeader extends Component {
         if (this.props.history) {
             this.props.history.push(`/home`)
         }
+        this.setState({
+            isShow: false,
+        });
     }
+
     showMenuApp = () => {
         this.setState({
             isShow: !this.state.isShow
         })
     }
+
     render() {
         let language = this.props.language
-        let isShow = this.state.isShow
+        let { isShow } = this.state;
+        // console.log('hoang check data: ', isShow)
         return (
             <React.Fragment>
+
                 <div className='home-header-container'>
-
-                    {isShow === true ?
-                        <>
-                            <div className='over-dark'
-                                onClick={() => { this.showMenuApp() }}
-                            >
-                            </div>
-                        </>
-                        : <></>
-
-                    }
                     <div className='home-header-content'>
                         <div className='left-content'>
                             <div className='left-content-up'>
-                                <div className='center-i'>
-                                <i className="fas fa-bars"
-                                    onClick={() => { this.showMenuApp() }} ></i>
+                                <div className='center-i'
+                                    onClick={() => { this.showMenuApp() }} >
+                                    <i className="fas fa-bars"></i>
                                 </div>
-                               
+
 
                                 <div className='header-logo'
                                     onClick={() => { this.returnToHome() }}
@@ -63,13 +59,6 @@ class HomeHeader extends Component {
                                 </div>
                             </div>
 
-                            {isShow === true ?
-                                <>
-                                    <MenuApp />
-                                </>
-                                : <></>
-
-                            }
                         </div>
                         <div className='center-content'>
                             <div to='/' className='child-content'>
@@ -93,7 +82,7 @@ class HomeHeader extends Component {
                         <div className='right-content'>
                             <div className='outline-support'>
                                 <span className='support'>
-                                    <i class="fa fa-headphones" aria-hidden="true"></i>
+                                    <i className="fa fa-headphones" aria-hidden="true"></i>
                                     <FormattedMessage id="homeheader.support" />
                                 </span>
                                 <span className='phone-number'>022-6666-9999</span>
@@ -102,7 +91,23 @@ class HomeHeader extends Component {
                             <div className={language === LANGUAGES.EN ? 'language-EN active' : 'language-EN'}><span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span></div>
 
                         </div>
+                        {isShow === true ?
+                            <>
+                                <div className='top-nav'>
+                                    <MenuApp />
+                                    <div className='over-dark'
+                                        onClick={() => { this.showMenuApp() }}
+                                    >
+                                    </div>
+                                </div>
+
+                            </>
+                            :
+                            <>
+                            </>
+                        }
                     </div>
+
                 </div>
                 {
                     this.props.isShowBanner === true &&

@@ -2,8 +2,73 @@
     height        : fit-content;
     display       : flex;
     flex-direction: column;
-    background    : #efefef;
+    background    : white;
     border-top    : 1px solid #dddddd;
+
+
+    .section-cright {
+        width           : 100vw;
+        height          : 55px;
+        background-color: #49bce2;
+        display         : flex;
+        padding         : 5px 17px 5px;
+        justify-content : space-between;
+        align-items     : center;
+
+        .section-home-about {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            height         : 55px;
+
+            a {
+                text-decoration: unset;
+            }
+        }
+
+        .collect-item {
+            display        : flex;
+            justify-content: space-between;
+            width          : 12%;
+            height         : 100%;
+
+            align-items: center;
+
+            .facebook-logo {
+                width              : 30%;
+                height             : 81%;
+                cursor             : pointer;
+                background         : url('../../../assets/Logo-news/Facebook_Logo_\(2019\).png');
+                background-position: center;
+                background-size    : contain;
+                background-repeat  : no-repeat;
+
+            }
+
+            .tiktok-logo {
+                width              : 30%;
+                height             : 81%;
+                cursor             : pointer;
+                background         : url('../../../assets/Logo-news/TikTok-Logo-Download-Free-PNG.png');
+                background-position: center;
+                background-size    : contain;
+                background-repeat  : no-repeat;
+
+            }
+
+            .instagram-logo {
+                width              : 30%;
+                height             : 81%;
+                cursor             : pointer;
+                background         : url('../../../assets/Logo-news/R.png');
+                background-position: center;
+                background-size    : contain;
+                background-repeat  : no-repeat;
+            }
+        }
+
+    }
+
 
     .content-home-about {
         display   : flex;
@@ -64,6 +129,18 @@
 
             }
 
+            .image-download {
+                width                 : 140px;
+                height                : 100px;
+                background            : url('../../../assets/Logo-news/apple-app-store-google-play-700x487.jpg');
+                background-size       : contain;
+                background-repeat     : no-repeat;
+                background-position   : center;
+                cursor                : pointer;
+                margin-top            : 20px;
+                // margin-left        : 100px;
+            }
+
         }
 
         .content-right {
@@ -87,18 +164,21 @@
                         width     : 64px;
                         margin-top: 9px;
                         background: url('../../../assets/093706-hellodoctorlogo.png');
+                        cursor    : pointer;
                     }
 
                     &.image-logo-2 {
                         height    : 64px;
                         width     : 64px;
                         background: url('../../../assets/082316-logo-bernard.png');
+                        cursor    : pointer;
                     }
 
                     &.image-logo-3 {
                         height    : 64px;
                         background: url('../../../assets/064252-doctor-check-2.png');
                         width     : 64px;
+                        cursor    : pointer;
                     }
 
                     background-position: center;
@@ -109,15 +189,22 @@
             }
 
         }
+
     }
+
+
 }
 
 .text {
     margin-left: 10px;
-    cursor     : pointer;
+
 
     &.text1 {
-        color: rgb(15, 134, 134);
+        color : rgb(15, 134, 134);
+        cursor: pointer;
+        &:hover{
+            color : rgb(63, 182, 182);
+        }
     }
 
     &.name-company {

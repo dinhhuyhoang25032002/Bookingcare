@@ -18,7 +18,6 @@ import confirmBooking from '../containers/Patient/confirmBooking';
 import SpecialtyInfor from '../containers/Patient/Specialty/SpecialtyInfor'
 import ClinicInfor from '../containers/Patient/Clinic/ClinicInfor.js'
 import CreateAccount from '../containers/Auth/CreateAccount.js'
-import ForgotPassword from './Auth/ForgotPassword.js'
 import Introduction from '../containers/HomePage/Extention/Introduction.js'
 
 class App extends Component {
@@ -51,16 +50,17 @@ class App extends Component {
                                 <Switch>
                                     <Route path={path.HOME} exact component={(Home)} />
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
+                                    <Route path={path.INTRODUCTION_HOMECARE} component={Introduction} />
+
                                     <Route path={path.CREATE_ACCOUNT} component={CreateAccount} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                     <Route path={path.HOMEPAGE} component={HomePage} />
                                     <Route path={path.INFOR_DOCTOR} component={InforDoctor} />
                                     <Route path={path.INFOR_SPCIALTY} component={SpecialtyInfor} />
                                     <Route path={path.INFOR_CLINIC} component={ClinicInfor} />
-                                    <Route path={'/doctor/'} component={userIsAuthenticated(Doctor)} />
+                                    <Route path={path.DOCTOR_SYSTEM} component={userIsAuthenticated(Doctor)} />
                                     <Route path={path.CONFIRM_BOOKING} component={confirmBooking} />
-                                    <Route path={path.FORGOT_PASSWORD} component={ForgotPassword} />
-                                    <Route path={path.INTRODUCTION_HOMECARE} component={Introduction} />
+
                                 </Switch>
                             </CustomScrollbars>
                         </div>
@@ -77,7 +77,7 @@ class App extends Component {
                             autoClose={5000}
                             hideProgressBar={false}
                             newestOnTop={false}
-                            closeOnClick
+                            closeOnClick={true}
                             rtl={false}
                             pauseOnFocusLoss
                             draggable

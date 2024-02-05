@@ -1,19 +1,20 @@
 .topnav {
     overflow          : hidden;
-    margin-top        : -5px;
+    
     background        : white;
-    margin-left       : -30px;
+   // margin-top       : 69px;
     height            : 100vh;
-    width             : 93%;
+    width             : 20%;
     display           : flex;
     flex-direction    : column;
     z-index           : 11;
     // justify-content: space-between;
-
+  //  position: fixed;
+    
     .contact-information {
         margin-left: 15px;
         margin-top : 35px;
-        padding    : 0 5px 0 10px;
+        padding    : 0 5px 0 0px;
     }
 
     .container {
@@ -22,9 +23,9 @@
             cursor        : pointer;
             width         : fit-content;
             color         : #02e4fd;
-            padding       : 6px 0px;
-            margin-left   : 21px;
-            padding-bottom: 1px;
+           // padding       : 6px 0px;
+            margin-left   : 8px;
+            padding-bottom: 5px;
             font-size     : 20px;
             position      : relative;
 

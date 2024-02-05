@@ -50,7 +50,7 @@ class Header extends Component {
                 {/* nút logout */}
 
                 <div className='language'>
-                    <sapn className='welcome'><FormattedMessage id='homeheader.welcome' />, {userInfo && userInfo.firstName && userInfo.lastName ? userInfo.firstName + ' ' + userInfo.lastName : ''} !</sapn>
+                    <span className='welcome'><FormattedMessage id='homeheader.welcome' />, {userInfo && userInfo.firstName && userInfo.lastName ? userInfo.firstName + ' ' + userInfo.lastName : ''} !</span>
                     <span className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}
                         onClick={() => this.handleLanguage(LANGUAGES.VI)}> VN</span>
                     <span className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'}

@@ -57,7 +57,11 @@ export const adminMenu = [
         name: 'menu.admin.Option', menus: [
             {
                 name: 'menu.admin.Back-to-home', link: '/home'
-            }
+            },
+            {
+                name: 'menu.admin.Change-password', link: '/system/change-password'
+            },
+           
         ]
     }
 
@@ -80,6 +84,9 @@ export const doctorMenu = [
         name: 'menu.admin.Option', menus: [
             {
                 name: 'menu.admin.Back-to-home', link: '/home'
+            },
+            {
+                name: 'menu.admin.Change-password', link: '/system/change-password'
             }
         ]
     }

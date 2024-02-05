@@ -95,7 +95,20 @@ const getAllClinic = () => {
 const getDoctorWithClinic = (data) => {
     return axios.get(`/api/get-all-doctor-with-clinic-by-id?id=${data.id}`)
 }
-export  {
+
+const getAllPatientForDoctor = (data) => {
+    return axios.get(`/api/get-all-patients-by-doctorid?doctorID=${data.doctorID}&date=${data.date}`)
+}
+
+const postMedicineBill = (data) => {
+    return axios.post('/api/medicine-bill-infor', data)
+}
+
+const handleChangePassword = (data) => {
+return axios.post('/api/change-password',data)
+}
+
+export {
     handleLogin, getAllUsers,
     createNewUserFromService, deleteUserFromService,
     editUserFromService, getAllCodeService,
@@ -105,5 +118,7 @@ export  {
     getExtraDoctorInfor, getProfileDoctorById,
     postPatientBookingInfor, postConfirmPatientBookingInfor,
     postNewSpecialty, getAllSpecialty, getDoctorWithSpecialty,
-    postNewClinic,getAllClinic,getDoctorWithClinic
+    postNewClinic, getAllClinic, getDoctorWithClinic,
+    getAllPatientForDoctor, postMedicineBill, 
+    handleChangePassword
 }

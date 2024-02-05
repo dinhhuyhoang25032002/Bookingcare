@@ -50,13 +50,13 @@ class ConfirmModal extends Component {
             isOpen: false,
             messageId: "",
             handleFunc: null,
-            dataFunc: null
+            dataFunc: null,
         });
     }
 
     render() {
         const { contentOfConfirmModal } = this.props;
-
+        console.log("hoang check data: ", contentOfConfirmModal)
         return (
             <Modal isOpen={contentOfConfirmModal.isOpen} className='confirm-modal' centered={true}>
                 <div className="modal-header">

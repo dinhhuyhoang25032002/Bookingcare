@@ -1,5 +1,9 @@
 import actionTypes from './actionTypes';
-import { getAllCodeService, createNewUserFromService, saveInforDoctorService, getAllUsers, deleteUserFromService, editUserFromService, getTopDoctorHomeService, getAllDoctorsService, getAllSpecialty, getAllClinic } from '../../services/userService'
+import { getAllCodeService, createNewUserFromService, 
+    saveInforDoctorService, getAllUsers, deleteUserFromService, 
+    editUserFromService, getTopDoctorHomeService, getAllDoctorsService, 
+    getAllSpecialty, getAllClinic } from '../../services/userService'
+    
 import { toast } from 'react-toastify';
 
 //  export const fetchTypeDataStart = () => ({
