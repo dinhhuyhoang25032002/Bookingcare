@@ -12,11 +12,12 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
             Booking.belongsTo(models.Allcode, { foreignKey: 'mepType', targetKey: 'keyMap', as: 'mepData' })
             Booking.belongsTo(models.Allcode, { foreignKey: 'statusID', targetKey: 'keyMap', as: 'statusData' })
+            Booking.belongsTo(models.Allcode, { foreignKey: 'timeType', targetKey: 'keyMap', as: 'timeTypeData' })
 
-            Booking.belongsTo(models.User, { foreignKey: 'doctorID', targetKey: 'id', as: 'doctorData' })
+
+
+            // Booking.belongsTo(models.User, { foreignKey: 'doctorID', targetKey: 'id', as: 'doctorData' })
             Booking.belongsTo(models.User, { foreignKey: 'patientID', targetKey: 'id', as: 'patientData' })
-
-
 
         }
     };
@@ -27,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         date: DataTypes.STRING,
         timeType: DataTypes.STRING,
         mepType: DataTypes.STRING,
-        userConfirm:DataTypes.STRING
+        userConfirm: DataTypes.STRING
 
     }, {
 

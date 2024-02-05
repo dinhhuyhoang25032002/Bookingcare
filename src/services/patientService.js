@@ -1,6 +1,7 @@
 import { reject } from "lodash";
 import db from "../models/index"
 require('dotenv').config();
+import _ from 'lodash'
 import emailService from './emailService'
 import { v4 as uuidv4 } from 'uuid';
 
@@ -12,12 +13,14 @@ let patientCofirmURL = (doctorID, token) => {
 let postPatientBookingInfor = (dataInput) => {
     return new Promise(async (resolve, reject) => {
 
-        console.log('check dataInput: ', dataInput)
+       // console.log('check dataInput: ', dataInput)
+        let dateOfBirth = "" + dataInput.dateOfBirth
         try {
             if (!dataInput.email || !dataInput.doctorID ||
                 !dataInput.dateOfBirth || !dataInput.timeType ||
                 !dataInput.bookingMethod || !dataInput.fullNamePatient ||
-                !dataInput.address || !dataInput.gender) {
+                !dataInput.address || !dataInput.gender ||
+                !dataInput.bookingMethod || !dataInput.dateBooking) {
                 resolve({
                     errCode: -1,
                     errMessage: "Missing required parameter!"
@@ -39,20 +42,21 @@ let postPatientBookingInfor = (dataInput) => {
                     where: { email: dataInput.email },
                     defaults: {
                         email: dataInput.email,
+                        firstName: dataInput.fullNamePatient,
                         phoneNumber: dataInput.phoneNumber,
                         roleID: 'R3',
                         address: dataInput.address,
                         gender: dataInput.gender
                     }
                 });
-                //  console.log('user in my server: ', user[0])
+              //  console.log('user in my server: ', user[0])
                 if (user && user[0]) {
                     await db.Booking.findOrCreate({
                         where: { patientID: user[0].id },
                         defaults: {
                             statusID: 'S1',
                             doctorID: dataInput.doctorID,
-                            date: dataInput.dateOfBirth,
+                            date: dataInput.dateBooking,
                             timeType: dataInput.timeType,
                             mepType: dataInput.bookingMethod,
                             userConfirm: token,
@@ -114,6 +118,8 @@ let postConfirmPatientBookingInfor = (data) => {
         }
     })
 }
+
+
 
 module.exports = {
     postPatientBookingInfor: postPatientBookingInfor,

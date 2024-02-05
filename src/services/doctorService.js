@@ -1,6 +1,8 @@
 import db from "../models/index"
 require('dotenv').config();
 import _ from 'lodash'
+import { checkMedicineBillEmail } from './emailService'
+
 const MAX_NUMBER_SCHEDULE = process.env.MAX_NUMBER_SCHEDULE
 let getTopDoctorHomeService = (limitInput) => {
     return new Promise(async (resolve, reject) => {
@@ -98,8 +100,6 @@ let saveInforDoctorsService = (inputData) => {
                         clinicID: inputData.selectedClinic
 
                     })
-
-
 
                 } else if (inputData.action === 'EDIT') {
                     let doctorMarkdown = await db.Markdown.findOne({
@@ -391,13 +391,101 @@ let getFrofileDoctorInforById = (inputData) => {
     })
 }
 
+let getAllPatientByDoctorId = (doctorID, date) => {
+   // console.log('hoang check data: ', doctorID, date)
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!doctorID || !date) {
+                resolve({
+                    errCode: -1,
+                    errMessage: 'Missing required parameter!'
+                })
+            }
+            else {
+                let data = await db.Booking.findAll({
+                    where: {
+                        doctorID: doctorID,
+                        date: date,
+                        statusID: 'S2'
+                    },
+                    attributes: ['patientID', 'doctorID']
+
+                    ,
+                    include: [
+                        {
+                            model: db.User, as: 'patientData', attributes: ['email', 'firstName', 'address', 'phoneNumber'],
+                            include: [
+                                { model: db.Allcode, as: 'genderData', attributes: ['valueVi', 'valueEn'] },
+                            ]
+                        },
+                        { model: db.Allcode, as: 'mepData', attributes: ['valueVi', 'valueEn'] },
+                        { model: db.Allcode, as: 'timeTypeData', attributes: ['valueVi', 'valueEn'] },
+                    ],
+                    nest: true,
+                    raw: false
+
+                })
+             //   console.log('hoang check data:', data)
+
+                resolve({
+                    errCode: 0,
+                    errMessage: "Data from server:",
+                    data: data
+                })
+            }
+
+
+        } catch (e) {
+            reject(e);
+        }
+    })
+}
+
+
+let postMedicineBill = (dataSend) => {
+   // console.log('data client: ', dataSend)
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!dataSend.email || !dataSend.image) {
+                resolve({
+                    errCode: -1,
+                    errMessage: 'Missing required parameter!'
+                })
+            } else {
+                let data = {}
+                data = await db.Booking.findOne({
+                    where: {
+                        doctorID: dataSend.patientInfor.doctorID,
+                        patientID: dataSend.patientInfor.patientID,
+                        date: dataSend.date,
+                        statusID: 'S2'
+                    },
+                    raw: false,
+                    nest: true
+                })
+                if (data) {
+                    data.statusID = 'S3';
+                    await data.save();
+                   // console.log('hoang check data: ', data)
+                } else {
+                    data = {}
+                }
+               await checkMedicineBillEmail(dataSend)
+                resolve({
+                    errCode: 0,
+                    Message: 'Send Medicine Bill Success!',
+                    
+                })
+            }
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
 module.exports = {
-    getTopDoctorHomeService: getTopDoctorHomeService,
-    getAllDoctorsService: getAllDoctorsService,
-    saveInforDoctorsService: saveInforDoctorsService,
-    getInforDoctorsByIdService: getInforDoctorsByIdService,
-    bulkCreateShedule: bulkCreateShedule,
-    getScheduleDoctorByDate: getScheduleDoctorByDate,
-    getExtraDoctorInforById: getExtraDoctorInforById,
-    getFrofileDoctorInforById: getFrofileDoctorInforById,
+    getTopDoctorHomeService, getAllDoctorsService,
+    saveInforDoctorsService, getInforDoctorsByIdService,
+    bulkCreateShedule, getScheduleDoctorByDate,
+    getExtraDoctorInforById, getFrofileDoctorInforById,
+    getAllPatientByDoctorId, postMedicineBill
 }

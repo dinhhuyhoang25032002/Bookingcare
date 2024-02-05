@@ -32,6 +32,9 @@ let initWebRouters = (app) => {
     router.put('/api/edit-user', usercontroller.handleEditUser)
     router.delete('/api/delete-user', usercontroller.handleDeleteUser);
     router.get('/api/allcode', usercontroller.getAllCode);
+    router.post('/api/change-password',usercontroller.handleChangePassword);
+
+
 
     //, checkJwtAndCookieFromClient
     router.get('/api/top-doctor-home', doctorcontroller.getTopDoctorHome)
@@ -42,7 +45,9 @@ let initWebRouters = (app) => {
     router.post('/api/bulk-create-schedule', doctorcontroller.bulkCreateShedule)
     router.get('/api/get-extra-doctor-infor-by-id', doctorcontroller.getExtraDoctorInforById)
     router.get('/api/get-profile-doctor-infor-by-id', doctorcontroller.getFrofileDoctorInforById)
-
+    router.get('/api/get-all-patients-by-doctorid', doctorcontroller.getAllPatientByDoctorId)
+    router.post('/api/medicine-bill-infor', doctorcontroller.postMedicineBill)
+    
     router.post('/api/patient-booking-infor', patientcontroller.postPatientBookingInfor)
     router.post('/api/confirm-patient-booking-infor', patientcontroller.postConfirmPatientBookingInfor)
 

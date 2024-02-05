@@ -1,7 +1,7 @@
 import doctorService from "../services/doctorService"
 
 let getTopDoctorHome = async (req, res) => {
-   // console.log('hoang check data: ', req.user);
+    // console.log('hoang check data: ', req.user);
     let limit = req.query.limit;
     if (!limit) limit = 15;
     try {
@@ -112,6 +112,33 @@ let getFrofileDoctorInforById = async (req, res) => {
     }
 }
 
+let getAllPatientByDoctorId = async (req, res) => {
+    try {
+        let data = await doctorService.getAllPatientByDoctorId(req.query.doctorID, req.query.date)
+        return res.status(200).json(data)
+    } catch (e) {
+        console.log(e);
+        return res.status(200).json({
+            errCode: -1,
+            errMessage: "Error from server !"
+        })
+    }
+}
+
+let postMedicineBill = async (req, res) => {
+    try {
+        let data = await doctorService.postMedicineBill(req.body)
+        return res.status(200).json(data);
+    } catch (e) {
+        console.log(e);
+        return res.status(200).json({
+            errCode:-1,
+            errMessage:'Error from server !'
+        })
+    }
+}
+
+
 module.exports = {
     getTopDoctorHome: getTopDoctorHome,
     getAllDoctors: getAllDoctors,
@@ -121,4 +148,5 @@ module.exports = {
     getScheduleDoctorByDate: getScheduleDoctorByDate,
     getExtraDoctorInforById: getExtraDoctorInforById,
     getFrofileDoctorInforById: getFrofileDoctorInforById,
+    getAllPatientByDoctorId, postMedicineBill
 }

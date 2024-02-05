@@ -1,8 +1,10 @@
-import { promiseImpl } from "ejs";
+
 import db from "../models/index"
 import bcrypt from 'bcrypt';
 //mport { createJWT, verifyToken } from '../middleware/jwtAction'
-import dotenv from 'dotenv'
+
+
+
 
 let handleUserLogin = (email, password) => {
     return new Promise(async (resolve, reject) => {
@@ -12,7 +14,7 @@ let handleUserLogin = (email, password) => {
 
             if (isExist) {
                 let user = await db.User.findOne({
-                    attributes: ['email', 'roleID', 'passWord', 'firstName', 'lastName'],
+                    attributes: ['id', 'email', 'roleID', 'passWord', 'firstName', 'lastName'],
                     where: { email: email },
                     raw: true,
                     //   exclude:['passWord']
@@ -39,10 +41,10 @@ let handleUserLogin = (email, password) => {
                 userData.errMessage = `Your's email isn't exist in your system. Please try other email`
             }
 
-         //   let jwt = createJWT(userData.user);
-            userData.Token = jwt;
-            userData.ExpireIn = process.env.EXPIRE_IN;
-           
+            //   let jwt = createJWT(userData.user);
+            //  userData.Token = jwt;
+            //     userData.ExpireIn = process.env.EXPIRE_IN;
+
             resolve(userData)
         } catch (e) {
             reject(e);
@@ -241,6 +243,60 @@ let getAllCodeService = (typeInput) => {
     })
 }
 
+let handleChangePassword = (dataInut) => {
+
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!dataInut.email || !dataInut.newPassword) {
+                resolve({
+                    errCode: -1,
+                    errMessage: 'Missing requered parameter'
+                })
+
+            } else {
+                let checkEmail = await checkUserEmail(dataInut.email)
+
+                if (checkEmail === true) {
+                    let data = {};
+
+                    data = await db.User.findOne({
+                        where: {
+                            email: dataInut.email
+                        },
+                        raw: false,
+                        nest: true
+                    })
+
+                    if (data) {
+                        let password = await hashUserPassword(dataInut.newPassword)
+                        data.passWord = password;
+                        console.log("hoang check data: ", password)
+                        await data.save();
+                        resolve({
+                            errCode: 0,
+                            errMessage: "Change Password is success!"
+                        })
+                    } else {
+                        data = {};
+                        resolve({
+                            errCode: -1,
+                            errMessage: "Your email not exis or not true!"
+                        })
+                    }
+
+                } else {
+                    resolve({
+                        errCode: -1,
+                        errMessage: "Your email not exis or not true!"
+                    })
+                }
+            }
+        } catch (e) {
+            reject(e);
+        }
+    })
+}
+
 module.exports = {
     handleUserLogin: handleUserLogin,
     getAllUser: getAllUser,
@@ -248,4 +304,5 @@ module.exports = {
     deleteUser: deleteUser,
     updateUserData: updateUserData,
     getAllCodeService: getAllCodeService,
+    handleChangePassword
 }
